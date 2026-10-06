@@ -1,0 +1,15 @@
+---
+import content from "../data/content.json";
+const items = content.marquee;
+---
+<section class="marquee" aria-label="Enfoques de entrenamiento">
+  <div class="marquee__track">
+    {[0, 1].map((copia) => (
+      <ul class="marquee__group" aria-hidden={copia === 1 ? "true" : undefined}>
+        {items.map((t) => (
+          <li>{t}<span class="marquee__dot" aria-hidden="true">✦</span></li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</section>

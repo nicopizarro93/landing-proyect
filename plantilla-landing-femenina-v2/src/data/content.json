@@ -1,0 +1,88 @@
+{
+  "negocio": {
+    "nombre": "Camila Rojas",
+    "rubro": "Personal Trainer",
+    "ciudad": "Santiago, Chile",
+    "whatsapp": "56912345678",
+    "correo": "contacto@dominio-del-cliente.cl",
+    "instagram": "https://instagram.com/usuario",
+    "direccion": "",
+    "horario": "Lun a Vie 07:00–20:00 · Sáb 09:00–13:00"
+  },
+  "seo": {
+    "title": "Personal Trainer para mujeres en Santiago | Camila Rojas",
+    "description": "Entrenamiento personalizado para mujeres en Santiago: fuerza, bienestar y hábitos que duran. Presencial y online. Escríbeme por WhatsApp."
+  },
+  "hero": {
+    "etiqueta": "Entrenamiento para mujeres · Santiago",
+    "titulo": "Fuerza que se siente y bienestar que se queda",
+    "palabraDestacada": "bienestar",
+    "subtitulo": "Entrena a tu ritmo, sin presión ni culpa. Plan personalizado, acompañamiento cercano y resultados que se sostienen.",
+    "cta": "Quiero empezar",
+    "ctaSecundario": "Ver planes",
+    "mensajeWhatsapp": "Hola Camila, quiero información sobre los planes",
+    "foto": "",
+    "fotoAlt": "Camila Rojas, personal trainer, entrenando",
+    "chips": ["+250 alumnas", "Presencial y online"]
+  },
+  "hero25d": {
+    "capas": { "fondo": "", "medio": "", "sujeto": "", "frente": "" },
+    "sujetoAlt": "Camila Rojas, personal trainer",
+    "intro": { "etiqueta": "Entrenamiento para mujeres", "titulo": "Entrena con calma. Avanza con fuerza." },
+    "panel": { "titulo": "Un plan hecho para ti", "texto": "Sin presión ni culpa. Conversamos, diseñamos tu programa y avanzamos paso a paso, a tu ritmo." },
+    "cierre": { "titulo": "Tu primera sesión empieza con un mensaje", "cta": "Escríbeme por WhatsApp" }
+  },
+  "marquee": ["Fuerza", "Movilidad", "Bienestar", "Constancia", "Energía", "Confianza"],
+  "kinetico": {
+    "lineas": ["Fuerza no es perfección", "Es constancia con cariño"],
+    "frase": "Cada sesión es una promesa que te cumples a ti misma. Empezamos suave, avanzamos firme y celebramos cada paso del camino."
+  },
+  "stats": [
+    { "valor": 8, "sufijo": "+", "etiqueta": "años acompañando mujeres" },
+    { "valor": 250, "sufijo": "+", "etiqueta": "alumnas entrenadas" },
+    { "valor": 94, "sufijo": "%", "etiqueta": "logra su objetivo" },
+    { "valor": 12, "sufijo": "", "etiqueta": "semanas por programa" }
+  ],
+  "sobre": {
+    "titulo": "Hola, soy Camila",
+    "texto": "Soy personal trainer certificada y mamá. Entreno mujeres que quieren sentirse fuertes y cómodas en su cuerpo, sin dietas extremas ni rutinas imposibles. Me importa que disfrutes el proceso y que los resultados duren.",
+    "foto": "",
+    "fotoAlt": "Retrato de Camila Rojas",
+    "certificaciones": ["Entrenadora personal certificada", "Especialista en entrenamiento de fuerza", "Nutrición deportiva básica"]
+  },
+  "servicios": [
+    { "titulo": "Entrenamiento presencial", "descripcion": "Sesiones 1 a 1 con técnica cuidada y progresión a tu medida." },
+    { "titulo": "Plan online", "descripcion": "Rutinas y seguimiento por WhatsApp, desde tu casa o gimnasio." },
+    { "titulo": "Hábitos y alimentación", "descripcion": "Pautas simples y flexibles, sin prohibiciones." }
+  ],
+  "proceso": {
+    "titulo": "Así trabajamos",
+    "subtitulo": "Un camino claro, de la primera conversación a sentirte tú misma.",
+    "pasos": [
+      { "titulo": "Conversamos", "descripcion": "Me cuentas tus metas, tu rutina y cómo te sientes hoy." },
+      { "titulo": "Plan a tu medida", "descripcion": "Diseño tu programa semanal con ejercicios, cargas y descansos." },
+      { "titulo": "Entrenamos juntas", "descripcion": "Te guío en cada sesión, presencial u online, con corrección constante." },
+      { "titulo": "Celebramos avances", "descripcion": "Revisamos tu progreso cada semana y ajustamos lo que haga falta." }
+    ]
+  },
+  "planes": [
+    { "nombre": "Online", "precio": "$40.000", "periodo": "/mes", "destacado": false, "incluye": ["Rutina personalizada", "Seguimiento por WhatsApp", "Ajustes semanales"] },
+    { "nombre": "Presencial", "precio": "$90.000", "periodo": "/mes", "destacado": true, "incluye": ["8 sesiones 1 a 1", "Pauta de hábitos", "Medición de avances"] },
+    { "nombre": "Acompañamiento total", "precio": "$140.000", "periodo": "/mes", "destacado": false, "incluye": ["12 sesiones 1 a 1", "Pauta de hábitos", "Seguimiento diario"] }
+  ],
+  "testimonios": [
+    { "nombre": "María", "texto": "Bajé 6 kilos en 3 meses y recuperé mi energía." },
+    { "nombre": "Daniela", "texto": "Por fin disfruto entrenar. Nunca me sentí juzgada." },
+    { "nombre": "Francisca", "texto": "El seguimiento semanal hizo toda la diferencia." }
+  ],
+  "faq": [
+    { "pregunta": "¿Necesito experiencia previa?", "respuesta": "No. Adapto el plan a tu nivel actual." },
+    { "pregunta": "¿Puedo entrenar en mi casa?", "respuesta": "Sí. El plan online funciona con poco o ningún equipamiento." },
+    { "pregunta": "¿Sirve si tengo poco tiempo?", "respuesta": "Sí. Diseño sesiones de 30 a 45 minutos que se adaptan a tu agenda." }
+  ],
+  "contacto": {
+    "titulo": "¿Lista para empezar?",
+    "texto": "Escríbeme por WhatsApp y armamos tu plan esta semana."
+  },
+  "colores": { "fondo": "#FDF2F8", "acento": "#BE185D", "lavanda": "#6D28D9", "texto": "#4A1D3F" }
+}

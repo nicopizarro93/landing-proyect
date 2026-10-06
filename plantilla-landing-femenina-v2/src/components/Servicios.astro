@@ -1,0 +1,17 @@
+---
+import content from "../data/content.json";
+---
+<section class="section" id="servicios">
+  <div class="container">
+    <h2 class="section__title" data-reveal>Servicios</h2>
+    <div class="cards">
+      {content.servicios.map((s, i) => (
+        <article class="card" data-reveal="up" style={`--d:${i * 110}ms`}>
+          <span class="card__num">0{i + 1}</span>
+          <h3>{s.titulo}</h3>
+          <p>{s.descripcion}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

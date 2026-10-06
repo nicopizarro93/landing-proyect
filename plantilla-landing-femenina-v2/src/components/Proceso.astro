@@ -1,0 +1,23 @@
+---
+import content from "../data/content.json";
+const { proceso } = content;
+---
+<section class="section proceso" id="proceso">
+  <div class="container proceso__grid">
+    <div class="proceso__head">
+      <h2 class="section__title" data-reveal>{proceso.titulo}</h2>
+      <p class="proceso__sub" data-reveal style="--d:100ms">{proceso.subtitulo}</p>
+    </div>
+    <ol class="proceso__steps">
+      {proceso.pasos.map((p, i) => (
+        <li class="step" data-step>
+          <span class="step__num">{String(i + 1).padStart(2, "0")}</span>
+          <div>
+            <h3>{p.titulo}</h3>
+            <p>{p.descripcion}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

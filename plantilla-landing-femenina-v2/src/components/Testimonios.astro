@@ -1,0 +1,16 @@
+---
+import content from "../data/content.json";
+---
+<section class="section" id="testimonios">
+  <div class="container">
+    <h2 class="section__title" data-reveal>Resultados reales</h2>
+  </div>
+  <div class="slider" tabindex="0" role="region" aria-label="Testimonios">
+    {content.testimonios.map((t) => (
+      <figure class="quote">
+        <blockquote>“{t.texto}”</blockquote>
+        <figcaption>{t.nombre}</figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
