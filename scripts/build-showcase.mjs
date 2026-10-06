@@ -5,12 +5,14 @@
 //   showcase-dist/femenina-v2/        ← plantilla-landing-femenina-v2
 // Uso: node scripts/build-showcase.mjs
 import { spawnSync } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, rmSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const out = join(root, "showcase-dist");
+// En GitHub Pages el sitio vive bajo /<repo>/ (ej. SHOWCASE_BASE=/landing-proyect). En local queda vacío.
+const prefijo = (process.env.SHOWCASE_BASE || "").replace(/\/$/, "");
 
 const versiones = [
   { slug: "oscura", dir: "plantilla-landing" },
@@ -29,13 +31,14 @@ const run = (cmd, args, cwd, env = {}) => {
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 cpSync(join(root, "galeria"), out, { recursive: true });
+writeFileSync(join(out, ".nojekyll"), ""); // GitHub Pages no debe procesar con Jekyll (carpetas _astro)
 
 for (const { slug, dir } of versiones) {
   const cwd = join(root, dir);
   console.log(`\n=== ${slug} (${dir}) ===`);
   if (!existsSync(join(cwd, "node_modules"))) run("npm", ["install", "--no-audit", "--no-fund"], cwd);
   run("npm", ["run", "build"], cwd, {
-    BASE_PATH: `/${slug}`,
+    BASE_PATH: `${prefijo}/${slug}`,
     PUBLIC_NOINDEX: "true", // las demos no deben indexarse
     PUBLIC_SHOWCASE: "true", // muestra el botón "Todas las versiones"
   });

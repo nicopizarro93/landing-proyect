@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const root = join(resolve(dirname(fileURLToPath(import.meta.url)), ".."), "showcase-dist");
 const port = Number(process.argv[2]) || 4400;
+const prefijo = (process.env.SHOWCASE_BASE || "").replace(/\/$/, "");
 
 if (!existsSync(root)) {
   console.error("No existe showcase-dist/. Ejecuta primero: node scripts/build-showcase.mjs");
@@ -22,7 +23,13 @@ const tipos = {
 };
 
 createServer((req, res) => {
-  const ruta = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  let ruta = decodeURIComponent(new URL(req.url, "http://x").pathname);
+  // Para probar el prefijo de GitHub Pages: SHOWCASE_BASE=/landing-proyect node scripts/serve-showcase.mjs
+  if (prefijo) {
+    if (ruta === prefijo) { res.writeHead(301, { Location: prefijo + "/" }).end(); return; }
+    if (!ruta.startsWith(prefijo + "/")) { res.writeHead(404).end("No encontrado (usa " + prefijo + "/)"); return; }
+    ruta = ruta.slice(prefijo.length);
+  }
   let archivo = normalize(join(root, ruta));
   if (!archivo.startsWith(root)) { res.writeHead(403).end("Prohibido"); return; }
   if (existsSync(archivo) && statSync(archivo).isDirectory()) {
