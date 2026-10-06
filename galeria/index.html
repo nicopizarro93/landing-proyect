@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Versiones de landing page</title>
+  <meta name="description" content="Elige el estilo de tu landing page. Cada versión se puede abrir y probar en el celular." />
+  <style>
+    :root {
+      --fondo: #f7f5f2;
+      --texto: #1c1917;
+      --suave: #57534e;
+      --borde: #e7e2dc;
+      --acento: #1c1917;
+      --radio: 22px;
+      --ease: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --fondo: #14110f; --texto: #f5f1ec; --suave: #b8b0a7; --borde: #2c2723; --acento: #f5f1ec; }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font: 400 1rem/1.6 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, p { margin: 0; overflow-wrap: anywhere; }
+    .wrap { width: min(1120px, 100% - 2rem); margin-inline: auto; }
+    header { padding-block: clamp(3rem, 9vw, 6rem) 2rem; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.78rem; font-weight: 700; color: var(--suave); }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.2rem, 7vw, 4.2rem); line-height: 1.05; letter-spacing: -0.02em; margin-top: 0.8rem; text-wrap: balance; }
+    .lead { color: var(--suave); font-size: 1.1rem; max-width: 52ch; margin-top: 1rem; }
+
+    .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-bottom: 4rem; }
+    @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: color-mix(in srgb, var(--fondo) 60%, #fff 40%);
+      border: 1px solid var(--borde);
+      border-radius: var(--radio);
+      overflow: clip;
+    }
+    @media (prefers-color-scheme: dark) { .card { background: #1c1815; } }
+    .preview { position: relative; aspect-ratio: 16 / 11; background: var(--borde); overflow: clip; }
+    .preview iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 1280px; height: 880px;
+      border: 0;
+      transform-origin: 0 0;
+      transform: scale(var(--s, 0.3));
+      pointer-events: none;
+      background: #fff;
+    }
+    .body { display: flex; flex-direction: column; gap: 0.9rem; padding: 1.4rem; flex: 1; }
+    .body h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; line-height: 1.15; }
+    .body p { color: var(--suave); }
+    .swatches { display: flex; gap: 0.4rem; }
+    .swatches i { width: 1.4rem; height: 1.4rem; border-radius: 50%; border: 1px solid rgba(0, 0, 0, 0.12); }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tags span { font-size: 0.78rem; font-weight: 600; padding: 0.2rem 0.65rem; border-radius: 999px; border: 1px solid var(--borde); color: var(--suave); }
+    .actions { margin-top: auto; display: grid; gap: 0.6rem; padding-top: 0.4rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      min-height: 48px; padding: 0.7rem 1.2rem;
+      border-radius: 999px; font-weight: 600; text-decoration: none;
+      border: 2px solid var(--acento);
+      touch-action: manipulation;
+      transition: transform 120ms var(--ease), background-color 180ms, color 180ms;
+    }
+    .btn--primario { background: var(--acento); color: var(--fondo); }
+    .btn--ghost { color: var(--texto); }
+    .btn:active { transform: scale(0.97); }
+    .btn:focus-visible { outline: 3px solid #7c3aed; outline-offset: 3px; }
+    @media (hover: hover) and (pointer: fine) {
+      .btn--ghost:hover { background: var(--acento); color: var(--fondo); }
+      .btn--primario:hover { transform: translateY(-2px); }
+    }
+    footer { border-top: 1px solid var(--borde); padding-block: 1.6rem; color: var(--suave); font-size: 0.9rem; }
+
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <p class="eyebrow">Personal trainers</p>
+    <h1>Elige el estilo de tu landing page</h1>
+    <p class="lead">Tres versiones listas para personalizar con tu nombre, tus fotos y tus planes. Ábrelas, pruébalas en tu celular y dime cuál te representa mejor.</p>
+  </header>
+
+  <main class="wrap">
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer>
+    <div class="wrap">Las páginas de ejemplo usan datos ficticios. Tu versión llevará tu información real.</div>
+  </footer>
+
+  <script>
+    // Cada version vive en una subcarpeta hermana de esta pagina (rutas relativas).
+    const versiones = [
+      {
+        carpeta: "oscura/",
+        nombre: "Energía",
+        texto: "Oscura y deportiva. Negro con rojo, mucha fuerza visual y movimiento al hacer scroll.",
+        colores: ["#0a0a0a", "#ef4444", "#f5f5f5"],
+        etiquetas: ["Negro y rojo", "Motion de scroll", "Marquee"],
+        extra: null,
+      },
+      {
+        carpeta: "femenina/",
+        nombre: "Bienestar",
+        texto: "Suave y cercana. Rosa y lavanda, tipografía elegante y texto que cobra vida al desplazarte.",
+        colores: ["#fdf2f8", "#be185d", "#6d28d9"],
+        etiquetas: ["Rosa y lavanda", "Kinetic type", "Parallax"],
+        extra: { etiqueta: "Ver demo con capas 2.5D", href: "femenina/hero-25d/" },
+      },
+      {
+        carpeta: "femenina-v2/",
+        nombre: "Bienestar Pro",
+        texto: "La versión Bienestar, más pulida: menú translúcido, mejor en celular y a prueba de textos largos.",
+        colores: ["#fdf2f8", "#be185d", "#6d28d9"],
+        etiquetas: ["Rosa y lavanda", "Menú translúcido", "Optimizada para móvil"],
+        extra: null,
+      },
+    ];
+
+    const grid = document.getElementById("grid");
+    for (const v of versiones) {
+      const card = document.createElement("article");
+      card.className = "card";
+      card.innerHTML = `
+        <div class="preview" inert aria-hidden="true">
+          <iframe src="${v.carpeta}" loading="lazy" tabindex="-1" title=""></iframe>
+        </div>
+        <div class="body">
+          <h2>${v.nombre}</h2>
+          <p>${v.texto}</p>
+          <div class="swatches" aria-hidden="true">${v.colores.map((c) => `<i style="background:${c}"></i>`).join("")}</div>
+          <div class="tags">${v.etiquetas.map((t) => `<span>${t}</span>`).join("")}</div>
+          <div class="actions">
+            <a class="btn btn--primario" href="${v.carpeta}">Ver la página →</a>
+            ${v.extra ? `<a class="btn btn--ghost" href="${v.extra.href}">${v.extra.etiqueta}</a>` : ""}
+          </div>
+        </div>`;
+      grid.appendChild(card);
+    }
+
+    // Ajusta la escala de cada vista previa al ancho real de su tarjeta.
+    const fit = () => document.querySelectorAll(".preview").forEach((p) => p.style.setProperty("--s", (p.clientWidth / 1280).toFixed(4)));
+    fit();
+    addEventListener("resize", fit);
+  </script>
+</body>
+</html>

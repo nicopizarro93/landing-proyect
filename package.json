@@ -1,0 +1,8 @@
+{
+  "name": "landing-proyect",
+  "private": true,
+  "scripts": {
+    "showcase:build": "node scripts/build-showcase.mjs",
+    "showcase:serve": "node scripts/serve-showcase.mjs"
+  }
+}
