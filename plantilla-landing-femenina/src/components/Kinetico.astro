@@ -1,0 +1,16 @@
+---
+import content from "../data/content.json";
+const { lineas, frase } = content.kinetico;
+const palabras = frase.split(" ");
+---
+<section class="kinetic" aria-labelledby="kinetic-title">
+  <h2 id="kinetic-title" class="sr-only">{lineas.join(". ")}</h2>
+  <div class="kinetic__lines" aria-hidden="true">
+    {lineas.map((l, i) => (
+      <p class:list={["kinetic__line", i % 2 ? "kinetic__line--rev" : "kinetic__line--fwd"]} data-skew>{l}</p>
+    ))}
+  </div>
+  <p class="kinetic__phrase container container--narrow">
+    {palabras.map((p) => <><span class="kword">{p}</span>{" "}</>)}
+  </p>
+</section>

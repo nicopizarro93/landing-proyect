@@ -1,0 +1,67 @@
+{
+  "negocio": {
+    "nombre": "Juan Pérez",
+    "rubro": "Personal Trainer",
+    "ciudad": "Santiago, Chile",
+    "whatsapp": "56912345678",
+    "correo": "contacto@dominio-del-cliente.cl",
+    "instagram": "https://instagram.com/usuario",
+    "direccion": "",
+    "horario": "Lun a Vie 07:00–20:00"
+  },
+  "seo": {
+    "title": "Personal Trainer en Santiago | Juan Pérez",
+    "description": "Entrenamiento personalizado en Santiago. Planes presenciales y online con seguimiento real. Escríbeme por WhatsApp."
+  },
+  "hero": {
+    "etiqueta": "Personal Trainer · Santiago",
+    "titulo": "Transforma tu cuerpo con disciplina real",
+    "subtitulo": "Entrenamiento personalizado, a tu ritmo y con seguimiento semanal.",
+    "cta": "Empieza tu transformación hoy",
+    "ctaSecundario": "Ver planes",
+    "mensajeWhatsapp": "Hola, quiero información sobre los planes",
+    "textoFondo": "FUERZA"
+  },
+  "marquee": ["Fuerza", "Hipertrofia", "Pérdida de grasa", "Movilidad", "Constancia", "Resultados"],
+  "stats": [
+    { "valor": 8, "sufijo": "+", "etiqueta": "años de experiencia" },
+    { "valor": 250, "sufijo": "+", "etiqueta": "alumnos entrenados" },
+    { "valor": 94, "sufijo": "%", "etiqueta": "cumple su objetivo" },
+    { "valor": 12, "sufijo": "", "etiqueta": "semanas por programa" }
+  ],
+  "servicios": [
+    { "titulo": "Entrenamiento presencial", "descripcion": "Sesiones 1 a 1 con corrección de técnica y progresión medida." },
+    { "titulo": "Plan online", "descripcion": "Rutina adaptada y seguimiento por WhatsApp, estés donde estés." },
+    { "titulo": "Plan de alimentación", "descripcion": "Pautas simples y sostenibles, sin dietas extremas." }
+  ],
+  "proceso": {
+    "titulo": "Así trabajamos",
+    "subtitulo": "Un método claro, de la primera conversación al resultado.",
+    "pasos": [
+      { "titulo": "Evaluación", "descripcion": "Conversamos tus metas, lesiones y tiempo disponible. Medimos tu punto de partida." },
+      { "titulo": "Plan a tu medida", "descripcion": "Diseño tu programa semanal: ejercicios, cargas y descansos." },
+      { "titulo": "Entrenamiento guiado", "descripcion": "Entrenamos juntos o a distancia, con corrección constante." },
+      { "titulo": "Seguimiento", "descripcion": "Revisamos avances cada semana y ajustamos el plan." }
+    ]
+  },
+  "planes": [
+    { "nombre": "Online", "precio": "$40.000", "periodo": "/mes", "destacado": false, "incluye": ["Rutina personalizada", "Seguimiento por WhatsApp", "Ajustes semanales"] },
+    { "nombre": "Presencial", "precio": "$90.000", "periodo": "/mes", "destacado": true, "incluye": ["8 sesiones 1 a 1", "Plan de alimentación", "Medición de avances"] },
+    { "nombre": "Pro", "precio": "$140.000", "periodo": "/mes", "destacado": false, "incluye": ["12 sesiones 1 a 1", "Plan de alimentación", "Seguimiento diario"] }
+  ],
+  "testimonios": [
+    { "nombre": "María", "texto": "Bajé 6 kilos en 3 meses y recuperé mi energía." },
+    { "nombre": "Camilo", "texto": "Por fin entendí cómo entrenar sin lesionarme." },
+    { "nombre": "Daniela", "texto": "El seguimiento semanal hizo toda la diferencia." }
+  ],
+  "faq": [
+    { "pregunta": "¿Necesito experiencia previa?", "respuesta": "No. Adapto el plan a tu nivel actual." },
+    { "pregunta": "¿Puedo entrenar en mi casa?", "respuesta": "Sí. El plan online funciona con poco o ningún equipamiento." },
+    { "pregunta": "¿Cuánto tardo en ver resultados?", "respuesta": "Los primeros cambios suelen notarse entre la semana 4 y 6." }
+  ],
+  "contacto": {
+    "titulo": "¿Listo para empezar?",
+    "texto": "Escríbeme por WhatsApp y armamos tu plan esta semana."
+  },
+  "colores": { "fondo": "#0a0a0a", "acento": "#ef4444" }
+}

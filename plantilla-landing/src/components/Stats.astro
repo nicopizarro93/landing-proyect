@@ -1,0 +1,15 @@
+---
+import content from "../data/content.json";
+---
+<section class="stats">
+  <div class="container stats__grid">
+    {content.stats.map((s, i) => (
+      <div class="stat" data-reveal style={`--d:${i * 90}ms`}>
+        <p class="stat__num">
+          <span data-count={s.valor}>0</span><span class="stat__suffix">{s.sufijo}</span>
+        </p>
+        <p class="stat__label">{s.etiqueta}</p>
+      </div>
+    ))}
+  </div>
+</section>

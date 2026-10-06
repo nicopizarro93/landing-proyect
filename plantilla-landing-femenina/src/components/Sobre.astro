@@ -1,0 +1,22 @@
+---
+import content from "../data/content.json";
+const { sobre } = content;
+---
+<section class="section sobre" id="sobre">
+  <div class="container sobre__grid">
+    <div class="arch arch--small" data-reveal="scale">
+      {sobre.foto
+        ? <img src={sobre.foto} alt={sobre.fotoAlt} width="480" height="600" loading="lazy" />
+        : <span class="arch__placeholder" role="img" aria-label={sobre.fotoAlt}></span>}
+    </div>
+    <div>
+      <h2 class="section__title" data-reveal>{sobre.titulo}</h2>
+      <p class="sobre__text" data-reveal style="--d:80ms">{sobre.texto}</p>
+      <ul class="sobre__certs">
+        {sobre.certificaciones.map((c, i) => (
+          <li data-reveal style={`--d:${160 + i * 70}ms`}>{c}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

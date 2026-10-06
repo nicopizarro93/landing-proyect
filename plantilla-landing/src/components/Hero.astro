@@ -1,0 +1,35 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+
+const { hero, negocio } = content;
+const palabras = hero.titulo.split(" ");
+---
+<header class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__blob hero__blob--a"></span>
+    <span class="hero__blob hero__blob--b"></span>
+    <span class="hero__ghost">{hero.textoFondo}</span>
+  </div>
+
+  <div class="container hero__inner">
+    <p class="eyebrow hero__eyebrow">{hero.etiqueta}</p>
+    <h1 class="hero__title">
+      {palabras.map((p, i) => (
+        <span class="word" style={`--i:${i}`}><span class="word__inner">{p}</span></span>
+      ))}
+    </h1>
+    <p class="hero__sub">{hero.subtitulo}</p>
+    <div class="hero__actions">
+      <WhatsAppButton etiqueta={hero.cta} texto={hero.mensajeWhatsapp} origen="hero" />
+      <a class="btn btn--ghost" href="#planes">
+        <span class="btn__label">{hero.ctaSecundario}</span>
+      </a>
+    </div>
+    <p class="hero__name">{negocio.nombre} · {negocio.ciudad}</p>
+  </div>
+
+  <a class="hero__scroll" href="#servicios" aria-label="Bajar a servicios">
+    <span></span>
+  </a>
+</header>

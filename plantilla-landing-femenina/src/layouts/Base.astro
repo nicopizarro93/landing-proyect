@@ -1,0 +1,58 @@
+---
+import "../styles/global.css";
+import content from "../data/content.json";
+
+const {
+  title = content.seo.title,
+  description = content.seo.description,
+} = Astro.props;
+
+const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const n = content.negocio;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: `${n.nombre} | ${n.rubro}`,
+  description,
+  url: canonical.href,
+  telephone: `+${n.whatsapp}`,
+  email: n.correo,
+  openingHours: n.horario,
+  ...(n.direccion ? { address: n.direccion } : {}),
+  ...(n.instagram ? { sameAs: [n.instagram] } : {}),
+};
+---
+<!doctype html>
+<html lang="es-CL" style={`--color-fondo:${content.colores.fondo};--color-acento:${content.colores.acento};--color-lavanda:${content.colores.lavanda};--color-texto:${content.colores.texto}`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("/og-image.jpg", Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content={content.colores.fondo} />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      import "../scripts/motion.js";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+import content from "../data/content.json";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: content.faq.map((f) => ({
+    "@type": "Question",
+    name: f.pregunta,
+    acceptedAnswer: { "@type": "Answer", text: f.respuesta },
+  })),
+};
+---
+<section class="section" id="faq">
+  <div class="container container--narrow">
+    <h2 class="section__title" data-reveal>Preguntas frecuentes</h2>
+    {content.faq.map((f, i) => (
+      <details class="faq" data-reveal style={`--d:${i * 80}ms`}>
+        <summary>{f.pregunta}</summary>
+        <p>{f.respuesta}</p>
+      </details>
+    ))}
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+</section>

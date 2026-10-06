@@ -1,0 +1,48 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+
+const { hero, negocio } = content;
+const palabras = hero.titulo.split(" ");
+const destacada = hero.palabraDestacada.toLowerCase();
+---
+<header class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="hero__blob hero__blob--a"></span>
+    <span class="hero__blob hero__blob--b"></span>
+  </div>
+
+  <div class="container hero__grid">
+    <div class="hero__inner">
+      <p class="eyebrow hero__eyebrow">{hero.etiqueta}</p>
+      <h1 class="hero__title" aria-label={hero.titulo}>
+        {palabras.map((p, i) => (
+          <span class="word" aria-hidden="true">
+            <span class:list={["word__inner", { "word__inner--hl": p.toLowerCase() === destacada }]} style={`--i:${i}`}>
+              {[...p].map((ch, c) => <span class="char" style={`--c:${c}`}>{ch}</span>)}
+            </span>
+          </span>
+        ))}
+      </h1>
+      <p class="hero__sub">{hero.subtitulo}</p>
+      <div class="hero__actions">
+        <WhatsAppButton etiqueta={hero.cta} texto={hero.mensajeWhatsapp} origen="hero" />
+        <a class="btn btn--ghost" href="#planes"><span class="btn__label">{hero.ctaSecundario}</span></a>
+      </div>
+      <p class="hero__name">{negocio.nombre} · {negocio.ciudad}</p>
+    </div>
+
+    <div class="hero__visual">
+      <div class="arch" data-parallax>
+        {hero.foto
+          ? <img src={hero.foto} alt={hero.fotoAlt} width="640" height="800" fetchpriority="high" />
+          : <span class="arch__placeholder" role="img" aria-label={hero.fotoAlt}></span>}
+      </div>
+      {hero.chips.map((c, i) => (
+        <span class:list={["chip", `chip--${i + 1}`]}>{c}</span>
+      ))}
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#servicios" aria-label="Bajar a servicios"><span></span></a>
+</header>
