@@ -1,0 +1,15 @@
+{
+  "nombre": "Cocina cálida",
+  "texto": "Cálida y apetitosa. Terracota, oliva y mostaza, con un menú que cambia mientras haces scroll y un cotizador que arma tu pedido.",
+  "colores": [
+    "#b2432a",
+    "#4f6b2f",
+    "#e8a93a"
+  ],
+  "etiquetas": [
+    "Terracota y oliva",
+    "Menú interactivo",
+    "Cotizador"
+  ],
+  "orden": 1
+}

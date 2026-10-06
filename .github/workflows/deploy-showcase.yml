@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: plantilla-*/package-lock.json
+          cache-dependency-path: categorias/*/*/package-lock.json
       - name: Construir galería
         run: node scripts/build-showcase.mjs
         env:

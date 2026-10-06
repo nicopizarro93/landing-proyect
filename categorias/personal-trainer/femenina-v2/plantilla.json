@@ -1,0 +1,15 @@
+{
+  "nombre": "Bienestar Pro",
+  "texto": "La versión Bienestar, más pulida: menú translúcido, mejor en celular y a prueba de textos largos.",
+  "colores": [
+    "#fdf2f8",
+    "#be185d",
+    "#6d28d9"
+  ],
+  "etiquetas": [
+    "Rosa y lavanda",
+    "Menú translúcido",
+    "Optimizada para móvil"
+  ],
+  "orden": 3
+}

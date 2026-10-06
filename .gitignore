@@ -1,2 +1,5 @@
-showcase-dist
 node_modules
+dist
+.astro
+.env
+showcase-dist

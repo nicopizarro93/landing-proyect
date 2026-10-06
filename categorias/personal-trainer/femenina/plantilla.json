@@ -1,0 +1,19 @@
+{
+  "nombre": "Bienestar",
+  "texto": "Suave y cercana. Rosa y lavanda, tipografía elegante y texto que cobra vida al desplazarte.",
+  "colores": [
+    "#fdf2f8",
+    "#be185d",
+    "#6d28d9"
+  ],
+  "etiquetas": [
+    "Rosa y lavanda",
+    "Kinetic type",
+    "Parallax"
+  ],
+  "orden": 2,
+  "extra": {
+    "etiqueta": "Ver demo con capas 2.5D",
+    "ruta": "hero-25d/"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "nombre": "Energía",
+  "texto": "Oscura y deportiva. Negro con rojo, mucha fuerza visual y movimiento al hacer scroll.",
+  "colores": [
+    "#0a0a0a",
+    "#ef4444",
+    "#f5f5f5"
+  ],
+  "etiquetas": [
+    "Negro y rojo",
+    "Motion de scroll",
+    "Marquee"
+  ],
+  "orden": 1
+}

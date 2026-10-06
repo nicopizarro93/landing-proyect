@@ -1,0 +1,15 @@
+{
+  "nombre": "Impulso",
+  "texto": "Editorial y moderna. Lima, cobalto y tinta, con tarjetas que se apilan y un proceso que se recorre en horizontal.",
+  "colores": [
+    "#0e1116",
+    "#c6f135",
+    "#2f4bff"
+  ],
+  "etiquetas": [
+    "Lima y cobalto",
+    "Bento",
+    "Scroll horizontal"
+  ],
+  "orden": 4
+}
