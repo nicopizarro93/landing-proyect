@@ -1,0 +1,20 @@
+---
+import content from "../data/content.json";
+
+const {
+  etiqueta = "Escríbeme por WhatsApp",
+  texto = "Hola, quiero más información",
+  origen = "general",
+  variante = "lima",
+} = Astro.props;
+
+const numero = content.negocio.whatsapp;
+const mensaje = encodeURIComponent(`${texto} (desde: ${origen})`);
+const href = `https://wa.me/${numero}?text=${mensaje}`;
+---
+<a class:list={["btn", `btn--${variante}`]} href={href} target="_blank" rel="noopener noreferrer">
+  <span class="btn__label">{etiqueta}</span>
+  <svg class="btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+    <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</a>

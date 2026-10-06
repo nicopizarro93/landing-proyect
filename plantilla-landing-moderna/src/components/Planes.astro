@@ -1,0 +1,34 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+const { planes } = content;
+---
+<section class="section planes" id="planes">
+  <div class="container">
+    <h2 class="section__title" data-split>{planes.titulo}</h2>
+    <div class="planes__list">
+      {planes.items.map((p, i) => (
+        <details class:list={["plan", { "plan--hot": p.destacado }]} name="planes" open={p.destacado} data-reveal style={`--d:${i * 80}ms`}>
+          <summary>
+            <span class="plan__name">
+              {p.nombre}
+              {p.destacado && <em class="plan__badge">Recomendado</em>}
+            </span>
+            <span class="plan__summary">{p.resumen}</span>
+            <span class="plan__price">{p.precio}<small>{p.periodo}</small></span>
+            <span class="plan__chev" aria-hidden="true"></span>
+          </summary>
+          <div class="plan__panel">
+            <ul>{p.incluye.map((x) => <li>{x}</li>)}</ul>
+            <WhatsAppButton
+              etiqueta="Quiero este plan"
+              texto={`Hola, quiero el plan ${p.nombre}`}
+              origen={`plan-${p.nombre.toLowerCase().replace(/\s+/g, "-")}`}
+              variante={p.destacado ? "lima" : "line"}
+            />
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

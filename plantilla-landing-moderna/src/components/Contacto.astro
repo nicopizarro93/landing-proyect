@@ -1,0 +1,19 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+const { contacto, negocio } = content;
+---
+<section class="section cierre" id="contacto">
+  <div class="container cierre__inner">
+    <h2 class="cierre__title" data-split>{contacto.titulo}</h2>
+    <p class="cierre__text" data-reveal>{contacto.texto}</p>
+    <div data-reveal style="--d:80ms">
+      <WhatsAppButton etiqueta={contacto.cta} origen="contacto" variante="tinta" />
+    </div>
+    <ul class="cierre__info" data-reveal style="--d:140ms">
+      <li>{negocio.horario}</li>
+      <li><a href={`mailto:${negocio.correo}`}>{negocio.correo}</a></li>
+      {negocio.direccion && <li>{negocio.direccion}</li>}
+    </ul>
+  </div>
+</section>

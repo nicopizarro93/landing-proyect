@@ -1,0 +1,21 @@
+---
+import content from "../data/content.json";
+const { sobre } = content;
+---
+<section class="section sobre" id="sobre">
+  <div class="container sobre__grid">
+    <div class="sobre__photo" data-reveal="scale">
+      {sobre.foto
+        ? <img src={sobre.foto} alt={sobre.fotoAlt} width="640" height="800" loading="lazy" />
+        : <div class="sobre__art" role="img" aria-label={sobre.fotoAlt}><span></span><span></span></div>}
+    </div>
+    <div class="sobre__text">
+      <h2 class="section__title" data-split>{sobre.titulo}</h2>
+      <p class="sobre__lead" data-reveal>{sobre.texto}</p>
+      <blockquote class="sobre__quote" data-reveal style="--d:80ms">“{sobre.cita}”</blockquote>
+      <ul class="sobre__certs">
+        {sobre.certificaciones.map((c, i) => <li data-reveal style={`--d:${120 + i * 60}ms`}>{c}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

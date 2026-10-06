@@ -1,0 +1,24 @@
+---
+import content from "../data/content.json";
+const { servicios } = content;
+---
+<section class="section stack" id="servicios" data-stack>
+  <div class="container">
+    <h2 class="section__title" data-split>{servicios.titulo}</h2>
+    <div class="stack__list">
+      {servicios.items.map((s, i) => (
+        <article class:list={["stack__card", `tone--${s.tono}`]} style={`--i:${i}`}>
+          <div class="stack__body">
+            <p class="stack__num">{String(i + 1).padStart(2, "0")}</p>
+            <h3>{s.titulo}</h3>
+            <p class="stack__desc">{s.descripcion}</p>
+            <ul class="tags">{s.etiquetas.map((e) => <li>{e}</li>)}</ul>
+          </div>
+          <div class={`stack__art stack__art--${(i % 3) + 1}`} aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

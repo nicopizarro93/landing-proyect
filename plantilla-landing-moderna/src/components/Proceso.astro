@@ -1,0 +1,22 @@
+---
+import content from "../data/content.json";
+const { proceso } = content;
+---
+<section class="ruta" id="proceso" data-ruta style={`--n:${proceso.pasos.length}`} aria-labelledby="ruta-title">
+  <div class="ruta__stage">
+    <div class="container ruta__head">
+      <h2 id="ruta-title" class="section__title" data-split>{proceso.titulo}</h2>
+      <p class="ruta__sub" data-reveal>{proceso.subtitulo}</p>
+    </div>
+    <ol class="ruta__track">
+      {proceso.pasos.map((p, i) => (
+        <li class={`ruta__panel tone--${p.tono}`} data-step>
+          <span class="ruta__num">{String(i + 1).padStart(2, "0")}</span>
+          <h3>{p.titulo}</h3>
+          <p>{p.descripcion}</p>
+        </li>
+      ))}
+    </ol>
+    <div class="container"><div class="ruta__bar" aria-hidden="true"><i></i></div></div>
+  </div>
+</section>

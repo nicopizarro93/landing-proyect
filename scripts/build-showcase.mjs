@@ -3,6 +3,7 @@
 //   showcase-dist/oscura/             ← plantilla-landing
 //   showcase-dist/femenina/           ← plantilla-landing-femenina
 //   showcase-dist/femenina-v2/        ← plantilla-landing-femenina-v2
+//   showcase-dist/moderna/            ← plantilla-landing-moderna
 // Uso: node scripts/build-showcase.mjs
 import { spawnSync } from "node:child_process";
 import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
@@ -18,6 +19,7 @@ const versiones = [
   { slug: "oscura", dir: "plantilla-landing" },
   { slug: "femenina", dir: "plantilla-landing-femenina" },
   { slug: "femenina-v2", dir: "plantilla-landing-femenina-v2" },
+  { slug: "moderna", dir: "plantilla-landing-moderna" },
 ];
 
 const run = (cmd, args, cwd, env = {}) => {

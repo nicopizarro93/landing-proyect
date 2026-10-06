@@ -36,7 +36,8 @@
     .lead { color: var(--suave); font-size: 1.1rem; max-width: 52ch; margin-top: 1rem; }
 
     .grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding-bottom: 4rem; }
-    @media (min-width: 900px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (min-width: 700px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (min-width: 1100px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
     .card {
       display: flex;
@@ -91,7 +92,7 @@
   <header class="wrap">
     <p class="eyebrow">Personal trainers</p>
     <h1>Elige el estilo de tu landing page</h1>
-    <p class="lead">Tres versiones listas para personalizar con tu nombre, tus fotos y tus planes. Ábrelas, pruébalas en tu celular y dime cuál te representa mejor.</p>
+    <p class="lead">Cuatro versiones listas para personalizar con tu nombre, tus fotos y tus planes. Ábrelas, pruébalas en tu celular y dime cuál te representa mejor.</p>
   </header>
 
   <main class="wrap">
@@ -127,6 +128,14 @@
         texto: "La versión Bienestar, más pulida: menú translúcido, mejor en celular y a prueba de textos largos.",
         colores: ["#fdf2f8", "#be185d", "#6d28d9"],
         etiquetas: ["Rosa y lavanda", "Menú translúcido", "Optimizada para móvil"],
+        extra: null,
+      },
+      {
+        carpeta: "moderna/",
+        nombre: "Impulso",
+        texto: "Editorial y moderna. Lima, cobalto y tinta, con tarjetas que se apilan y un proceso que se recorre en horizontal.",
+        colores: ["#0e1116", "#c6f135", "#2f4bff"],
+        etiquetas: ["Lima y cobalto", "Bento", "Scroll horizontal"],
         extra: null,
       },
     ];

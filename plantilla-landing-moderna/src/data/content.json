@@ -1,0 +1,98 @@
+{
+  "negocio": {
+    "nombre": "Alex Moreno",
+    "marca": "ALEX MORENO",
+    "rubro": "Coach de entrenamiento",
+    "ciudad": "Santiago, Chile",
+    "whatsapp": "56912345678",
+    "correo": "contacto@dominio-del-cliente.cl",
+    "instagram": "https://instagram.com/usuario",
+    "direccion": "",
+    "horario": "Lun a Vie 07:00–20:00"
+  },
+  "seo": {
+    "title": "Coach de entrenamiento en Santiago | Alex Moreno",
+    "description": "Entrenamiento personalizado en Santiago: fuerza, movilidad y hábitos que duran. Presencial y online. Agenda tu primera sesión por WhatsApp."
+  },
+  "hero": {
+    "etiqueta": "Coach de entrenamiento · Santiago",
+    "titulo": "Entrena {pill} fuerte, vive {pill} mejor.",
+    "tituloAccesible": "Entrena fuerte, vive mejor.",
+    "subtitulo": "Planes a tu medida, sesiones guiadas y seguimiento real. Sin fórmulas mágicas, con método.",
+    "cta": "Agenda tu primera sesión",
+    "ctaSecundario": "Ver planes",
+    "mensajeWhatsapp": "Hola Alex, quiero agendar mi primera sesión",
+    "foto": "",
+    "fotoAlt": "Alex Moreno entrenando con una alumna",
+    "chips": ["Sesión 1 a 1", "Online o presencial"],
+    "sello": "Cupos abiertos · Agenda tu sesión ·"
+  },
+  "bento": [
+    { "id": "alumnos", "tipo": "stat", "tono": "lima", "forma": "grande", "valor": 250, "sufijo": "+", "titulo": "alumnos entrenados", "texto": "Personas reales con objetivos distintos: bajar grasa, ganar fuerza, volver a moverse sin dolor." },
+    { "id": "exito", "tipo": "stat", "tono": "tinta", "forma": "normal", "valor": 94, "sufijo": "%", "titulo": "cumple su objetivo" },
+    { "id": "anios", "tipo": "stat", "tono": "cobalto", "forma": "alta", "valor": 8, "sufijo": "", "titulo": "años de experiencia", "texto": "Certificado y en formación continua." },
+    { "id": "horario", "tipo": "texto", "tono": "arena", "forma": "normal", "titulo": "Horario", "texto": "Lun a Vie 07:00–20:00" },
+    { "id": "metodo", "tipo": "texto", "tono": "arena", "forma": "ancha", "titulo": "Un método, no una moda", "texto": "Fuerza, movilidad y hábitos. Progresión medida cada semana y cero dietas extremas.", "etiquetas": ["Fuerza", "Movilidad", "Hábitos"] },
+    { "id": "cta", "tipo": "cta", "tono": "tinta", "forma": "normal", "titulo": "Empecemos", "texto": "Escríbeme" }
+  ],
+  "servicios": {
+    "titulo": "Lo que hago",
+    "items": [
+      { "titulo": "Entrenamiento 1 a 1", "descripcion": "Sesiones presenciales con técnica cuidada, cargas a tu nivel y progresión medida.", "etiquetas": ["Presencial", "Técnica", "Progresión"], "tono": "lima" },
+      { "titulo": "Plan online", "descripcion": "Rutina personalizada y seguimiento por WhatsApp, estés donde estés.", "etiquetas": ["Online", "Seguimiento", "Flexible"], "tono": "cobalto" },
+      { "titulo": "Hábitos y nutrición", "descripcion": "Pautas simples y sostenibles para comer mejor y dormir mejor, sin prohibiciones.", "etiquetas": ["Hábitos", "Sueño", "Alimentación"], "tono": "arena" }
+    ]
+  },
+  "sobre": {
+    "titulo": "Hola, soy Alex",
+    "texto": "Soy coach certificado y llevo ocho años acompañando personas a entrenar con constancia. Creo en procesos claros: medimos, ajustamos y celebramos cada avance. Si hoy te cuesta empezar, es justo donde mejor trabajo.",
+    "cita": "No necesitas motivación. Necesitas un plan que puedas cumplir.",
+    "foto": "",
+    "fotoAlt": "Retrato de Alex Moreno",
+    "certificaciones": ["Entrenador personal certificado", "Especialista en fuerza y acondicionamiento", "Primeros auxilios y RCP"]
+  },
+  "proceso": {
+    "titulo": "Así trabajamos",
+    "subtitulo": "Cuatro pasos, de la primera conversación a tus resultados.",
+    "pasos": [
+      { "titulo": "Conversamos", "descripcion": "Me cuentas tus metas, tu rutina y cómo te sientes hoy. Revisamos lesiones y tiempo disponible.", "tono": "lima" },
+      { "titulo": "Plan a tu medida", "descripcion": "Diseño tu programa semanal: ejercicios, cargas y descansos pensados para ti.", "tono": "arena" },
+      { "titulo": "Entrenamos", "descripcion": "Sesiones guiadas, presenciales u online, con corrección constante de técnica.", "tono": "cobalto" },
+      { "titulo": "Medimos y ajustamos", "descripcion": "Revisamos tu progreso cada semana y ajustamos el plan para seguir avanzando.", "tono": "tinta" }
+    ]
+  },
+  "planes": {
+    "titulo": "Planes",
+    "items": [
+      { "nombre": "Online", "precio": "$40.000", "periodo": "/mes", "destacado": false, "resumen": "Rutina y seguimiento a distancia", "incluye": ["Rutina personalizada", "Seguimiento por WhatsApp", "Ajustes semanales"] },
+      { "nombre": "Presencial", "precio": "$90.000", "periodo": "/mes", "destacado": true, "resumen": "8 sesiones guiadas al mes", "incluye": ["8 sesiones 1 a 1", "Pauta de hábitos", "Medición de avances"] },
+      { "nombre": "Acompañamiento total", "precio": "$140.000", "periodo": "/mes", "destacado": false, "resumen": "12 sesiones y seguimiento diario", "incluye": ["12 sesiones 1 a 1", "Pauta de hábitos", "Seguimiento diario"] }
+    ]
+  },
+  "testimonios": {
+    "titulo": "Lo que dicen",
+    "items": [
+      { "nombre": "María", "texto": "Bajé 6 kilos en 3 meses y recuperé mi energía." },
+      { "nombre": "Camilo", "texto": "Por fin entendí cómo entrenar sin lesionarme." },
+      { "nombre": "Daniela", "texto": "El seguimiento semanal hizo toda la diferencia." },
+      { "nombre": "Matías", "texto": "Llevaba años sin constancia. Con un plan claro lo logré." },
+      { "nombre": "Francisca", "texto": "Sesiones cortas, bien pensadas y sin juicios." },
+      { "nombre": "Pablo", "texto": "Gané fuerza y mi espalda dejó de molestarme." }
+    ]
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      { "pregunta": "¿Necesito experiencia previa?", "respuesta": "No. Adapto el plan a tu nivel actual y progresamos desde ahí." },
+      { "pregunta": "¿Puedo entrenar en mi casa?", "respuesta": "Sí. El plan online funciona con poco o ningún equipamiento." },
+      { "pregunta": "¿Cuánto tardo en ver resultados?", "respuesta": "Los primeros cambios suelen notarse entre la semana 4 y 6." },
+      { "pregunta": "¿Y si tengo una lesión?", "respuesta": "Lo revisamos en la primera conversación y adapto los ejercicios. Si hace falta, te pido el alta de tu profesional de salud." }
+    ]
+  },
+  "contacto": {
+    "titulo": "¿Empezamos?",
+    "texto": "Escríbeme por WhatsApp y armamos tu plan esta semana.",
+    "cta": "Hablemos por WhatsApp"
+  },
+  "colores": { "fondo": "#F2EFE8", "tinta": "#0E1116", "lima": "#C6F135", "cobalto": "#2F4BFF", "arena": "#E3DCCB", "suave": "#4B5160" }
+}

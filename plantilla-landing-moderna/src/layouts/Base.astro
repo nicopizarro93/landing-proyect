@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+import content from "../data/content.json";
+
+const {
+  title = content.seo.title,
+  description = content.seo.description,
+} = Astro.props;
+
+// Con BASE_PATH (galeria de versiones) las rutas cuelgan de una subcarpeta; sin ella, base queda vacio.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const n = content.negocio;
+const c = content.colores;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: `${n.nombre} | ${n.rubro}`,
+  description,
+  url: canonical.href,
+  telephone: `+${n.whatsapp}`,
+  email: n.correo,
+  openingHours: n.horario,
+  ...(n.direccion ? { address: n.direccion } : {}),
+  ...(n.instagram ? { sameAs: [n.instagram] } : {}),
+};
+const tokens = `--c-fondo:${c.fondo};--c-tinta:${c.tinta};--c-lima:${c.lima};--c-cobalto:${c.cobalto};--c-arena:${c.arena};--c-suave:${c.suave}`;
+---
+<!doctype html>
+<html lang="es-CL" style={tokens}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(`${base}/og-image.jpg`, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content={c.fondo} />
+    <link rel="icon" href={`${base}/favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <slot />
+    <script>
+      import "../scripts/motion.js";
+    </script>
+  </body>
+</html>

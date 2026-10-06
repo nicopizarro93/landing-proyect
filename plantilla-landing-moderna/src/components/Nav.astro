@@ -1,0 +1,17 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+const { negocio, hero } = content;
+---
+<header class="nav" data-nav>
+  <nav class="nav__bar" aria-label="Principal">
+    <a class="nav__name" href="#inicio">{negocio.nombre}</a>
+    <div class="nav__links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#planes">Planes</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <WhatsAppButton etiqueta="Escríbeme" texto={hero.mensajeWhatsapp} origen="nav" />
+  </nav>
+</header>

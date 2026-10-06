@@ -1,0 +1,57 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+
+const { hero, negocio } = content;
+// "{pill}" marca un hueco donde va una píldora decorativa (o una foto) dentro del titular.
+const tokens = hero.titulo.split(" ");
+let pillIndex = 0;
+const sello = hero.sello;
+---
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="container hero__top">
+    <p class="eyebrow hero__eyebrow">{hero.etiqueta}</p>
+    <h1 id="hero-title" class="hero__title" aria-label={hero.tituloAccesible}>
+      {tokens.map((t, i) => {
+        if (t === "{pill}") {
+          const k = pillIndex++;
+          return <span class:list={["pill", `pill--${k % 2 ? "cobalto" : "lima"}`]} style={`--i:${i}`} aria-hidden="true"></span>;
+        }
+        return (
+          <span class="word" style={`--i:${i}`} aria-hidden="true"><span class="word__inner">{t}</span></span>
+        );
+      })}
+    </h1>
+
+    <div class="hero__row">
+      <div class="hero__copy">
+        <p class="hero__sub">{hero.subtitulo}</p>
+        <div class="hero__actions">
+          <WhatsAppButton etiqueta={hero.cta} texto={hero.mensajeWhatsapp} origen="hero" />
+          <a class="btn btn--line" href="#planes"><span class="btn__label">{hero.ctaSecundario}</span></a>
+        </div>
+      </div>
+      <a class="badge" href="#planes" aria-label={`${hero.ctaSecundario}`}>
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" /></defs>
+          <text><textPath href="#circ" startOffset="0" textLength="272" lengthAdjust="spacing">{sello}</textPath></text>
+        </svg>
+        <span class="badge__arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="media" data-media>
+      {hero.foto
+        ? <img src={hero.foto} alt={hero.fotoAlt} width="1600" height="900" fetchpriority="high" />
+        : <div class="media__art" role="img" aria-label={hero.fotoAlt}>
+            <span class="art art--circle"></span>
+            <span class="art art--bar"></span>
+            <span class="art art--ring"></span>
+          </div>}
+      {hero.chips.map((c, i) => <span class:list={["media__chip", `media__chip--${i + 1}`]}>{c}</span>)}
+      <p class="media__tag">{negocio.nombre} · {negocio.ciudad}</p>
+    </div>
+  </div>
+</section>

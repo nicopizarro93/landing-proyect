@@ -1,0 +1,34 @@
+---
+import content from "../data/content.json";
+const { testimonios } = content;
+const items = testimonios.items;
+const mitad = Math.ceil(items.length / 2);
+const filas = [items.slice(0, mitad), items.slice(mitad)];
+---
+<section class="section muro" id="testimonios" data-muro aria-labelledby="muro-title">
+  <div class="container muro__head">
+    <h2 id="muro-title" class="section__title" data-split>{testimonios.titulo}</h2>
+    <button class="muro__toggle" type="button" data-muro-toggle aria-pressed="false">
+      <span class="muro__icon" aria-hidden="true"></span>
+      <span class="muro__label">Pausar movimiento</span>
+    </button>
+  </div>
+  {filas.map((fila, r) => (
+    <div class="muro__row" data-dir={r % 2 ? "rev" : "fwd"}>
+      <div class="muro__track">
+        {[0, 1].map((copia) => (
+          <ul class="muro__group" aria-hidden={copia === 1 ? "true" : undefined}>
+            {fila.map((t) => (
+              <li>
+                <figure class="quote">
+                  <blockquote>“{t.texto}”</blockquote>
+                  <figcaption>{t.nombre}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
+    </div>
+  ))}
+</section>

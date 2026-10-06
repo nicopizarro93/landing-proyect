@@ -1,0 +1,32 @@
+---
+import content from "../data/content.json";
+const tiles = content.bento;
+const hrefCta = `https://wa.me/${content.negocio.whatsapp}?text=${encodeURIComponent(`${content.hero.mensajeWhatsapp} (desde: bento)`)}`;
+---
+<section class="section bento" aria-label="Resultados y método">
+  <div class="container">
+    <div class="bento__grid">
+      {tiles.map((t, i) => {
+        const clases = ["tile", `tile--${t.tono}`, `tile--${t.forma}`];
+        const inner = (
+          <>
+            {t.tipo === "stat" && (
+              <p class="tile__num">
+                <span data-count={t.valor}>0</span><span class="tile__suffix">{t.sufijo}</span>
+              </p>
+            )}
+            <h3 class="tile__title">{t.titulo}</h3>
+            {t.texto && <p class="tile__text">{t.texto}</p>}
+            {t.etiquetas && (
+              <ul class="tile__tags">{t.etiquetas.map((e) => <li>{e}</li>)}</ul>
+            )}
+            {t.tipo === "cta" && <span class="tile__arrow" aria-hidden="true">↗</span>}
+          </>
+        );
+        return t.tipo === "cta"
+          ? <a class:list={[...clases, "tile--link"]} href={hrefCta} target="_blank" rel="noopener noreferrer" data-reveal style={`--d:${i * 70}ms`}>{inner}</a>
+          : <article class:list={clases} data-reveal style={`--d:${i * 70}ms`}>{inner}</article>;
+      })}
+    </div>
+  </div>
+</section>
