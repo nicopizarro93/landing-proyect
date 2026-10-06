@@ -1,0 +1,13 @@
+---
+// Plato decorativo hecho solo con CSS. `tono` cambia el color de la comida (terracota, oliva, mostaza).
+const { tono = "terracota", etiqueta = "", class: clase = "" } = Astro.props;
+---
+<div class:list={["plato", clase]} data-tone={tono} role={etiqueta ? "img" : undefined} aria-label={etiqueta || undefined} aria-hidden={etiqueta ? undefined : "true"}>
+  <span class="plato__rim"></span>
+  <span class="plato__inner">
+    <i class="plato__food plato__food--a"></i>
+    <i class="plato__food plato__food--b"></i>
+    <i class="plato__food plato__food--c"></i>
+    <i class="plato__food plato__food--d"></i>
+  </span>
+</div>

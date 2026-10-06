@@ -1,0 +1,13 @@
+---
+import content from "../data/content.json";
+---
+<section class="figs" aria-label="Cifras">
+  <div class="container figs__grid">
+    {content.cifras.map((c, i) => (
+      <div class="fig" data-reveal style={`--d:${i * 80}ms`}>
+        <p class="fig__num"><span data-count={c.valor}>0</span><span class="fig__suffix">{c.sufijo}</span></p>
+        <p class="fig__label">{c.etiqueta}</p>
+      </div>
+    ))}
+  </div>
+</section>

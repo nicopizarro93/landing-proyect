@@ -1,0 +1,21 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+import Plato from "./Plato.astro";
+const { contacto, negocio } = content;
+---
+<section class="cta" id="contacto">
+  <div class="container cta__inner">
+    <div class="cta__copy" data-reveal>
+      <h2>{contacto.titulo}</h2>
+      <p>{contacto.texto}</p>
+      <WhatsAppButton etiqueta={contacto.cta} origen="contacto" variante="crema" />
+      <ul class="cta__info">
+        <li>{negocio.horario}</li>
+        <li><a href={`mailto:${negocio.correo}`}>{negocio.correo}</a></li>
+        {negocio.direccion && <li>{negocio.direccion}</li>}
+      </ul>
+    </div>
+    <Plato class="plato--cta" tono="mostaza" />
+  </div>
+</section>

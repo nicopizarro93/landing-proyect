@@ -1,0 +1,30 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+import Plato from "./Plato.astro";
+const { hero } = content;
+---
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <span class="hero__blob" aria-hidden="true"></span>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow" data-rise style="--d:0ms">{hero.etiqueta}</p>
+      <h1 id="hero-title" class="hero__title" data-rise style="--d:80ms">{hero.titulo}</h1>
+      <p class="hero__sub" data-rise style="--d:180ms">{hero.subtitulo}</p>
+      <div class="hero__actions" data-rise style="--d:260ms">
+        <WhatsAppButton etiqueta={hero.cta} texto={hero.mensajeWhatsapp} origen="hero" />
+        <a class="btn btn--line" href="#menu"><span class="btn__label">{hero.ctaSecundario}</span></a>
+      </div>
+      <ul class="hero__points" data-rise style="--d:340ms">
+        {hero.puntos.map((p) => <li>{p}</li>)}
+      </ul>
+    </div>
+
+    <div class="hero__visual" data-rise style="--d:200ms">
+      {hero.foto
+        ? <img class="hero__photo" src={hero.foto} alt={hero.fotoAlt} width="900" height="900" fetchpriority="high" />
+        : <Plato class="plato--hero" tono="terracota" etiqueta={hero.fotoAlt} />}
+      {hero.chips.map((c, i) => <span class:list={["chip", `chip--${i + 1}`]}>{c}</span>)}
+    </div>
+  </div>
+</section>

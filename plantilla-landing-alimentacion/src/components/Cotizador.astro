@@ -1,0 +1,67 @@
+---
+import content from "../data/content.json";
+const { cotizador: q, negocio } = content;
+const hrefBase = `https://wa.me/${negocio.whatsapp}?text=${encodeURIComponent(`${q.mensajeBase} (desde: cotizador)`)}`;
+const config = {
+  semanas: 4.3,
+  planes: Object.fromEntries(q.planes.map((p) => [p.id, { nombre: p.nombre, precio: p.precio }])),
+  numero: negocio.whatsapp,
+  mensaje: q.mensajeBase,
+};
+const clp = (n) => new Intl.NumberFormat("es-CL", { style: "currency", currency: "CLP", maximumFractionDigits: 0 }).format(n);
+---
+<section class="section quote" id="cotizar" data-quote data-config={JSON.stringify(config)} aria-labelledby="quote-title">
+  <div class="container">
+    <h2 id="quote-title" class="section__title" data-reveal>{q.titulo}</h2>
+    <p class="quote__lead" data-reveal>{q.texto}</p>
+
+    <form class="quote__card" onsubmit="return false" data-reveal>
+      <div class="quote__controls">
+        <div class="field">
+          <label for="q-personas">Personas por día <output class="field__out" data-out-personas>{q.personasInicial}</output></label>
+          <input id="q-personas" name="personas" type="range" min={q.minPersonas} max={q.maxPersonas} step="5" value={q.personasInicial} />
+          <div class="field__scale"><span>{q.minPersonas}</span><span>{q.maxPersonas}</span></div>
+        </div>
+
+        <fieldset class="field">
+          <legend>Días a la semana</legend>
+          <div class="seg">
+            {[1, 2, 3, 4, 5].map((d) => (
+              <label class="seg__item">
+                <input type="radio" name="dias" value={d} checked={d === q.diasInicial} />
+                <span>{d}</span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Tipo de colación</legend>
+          <div class="opts">
+            {q.planes.map((p, i) => (
+              <label class="opt">
+                <input type="radio" name="plan" value={p.id} checked={i === 1} />
+                <span class="opt__body">
+                  <strong>{p.nombre}</strong>
+                  <small>{p.detalle}</small>
+                  <em>{clp(p.precio)} <span>por persona</span></em>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="quote__result" aria-live="polite">
+        <p class="quote__label">Valor referencial mensual</p>
+        <p class="quote__total"><output data-out-total>{clp(q.personasInicial * q.diasInicial * 4.3 * q.planes[1].precio)}</output></p>
+        <p class="quote__detail" data-out-detail>{q.personasInicial} personas · {q.diasInicial} días · {q.planes[1].nombre}</p>
+        <a class="btn btn--terracota" data-quote-cta href={hrefBase} target="_blank" rel="noopener noreferrer">
+          <span class="btn__label">Enviar esta cotización</span>
+          <svg class="btn__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </a>
+        <p class="quote__note">{q.nota}</p>
+      </div>
+    </form>
+  </div>
+</section>

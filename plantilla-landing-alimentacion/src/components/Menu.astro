@@ -1,0 +1,32 @@
+---
+import content from "../data/content.json";
+import Plato from "./Plato.astro";
+const { menu } = content;
+const primero = menu.dias[0];
+---
+<section class="section menu" id="menu" data-menu aria-labelledby="menu-title">
+  <div class="container">
+    <h2 id="menu-title" class="section__title" data-reveal>{menu.titulo}</h2>
+    <p class="menu__sub" data-reveal>{menu.subtitulo}</p>
+    <div class="menu__grid">
+      <div class="menu__sticky" aria-hidden="true">
+        <div class="menu__stage" data-stage data-tone={primero.tono}>
+          <Plato class="plato--menu" tono={primero.tono} />
+          <p class="menu__badge"><span data-stage-day>{primero.dia}</span></p>
+        </div>
+      </div>
+      <ol class="menu__days">
+        {menu.dias.map((d, i) => (
+          <li class:list={["day", { "is-active": i === 0 }]} data-day data-tone={d.tono} data-label={d.dia}>
+            <h3 class="day__name">{d.dia}</h3>
+            <p class="day__main">{d.plato}</p>
+            <ul class="day__sides">
+              <li>{d.acompanamiento}</li>
+              <li>{d.postre}</li>
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

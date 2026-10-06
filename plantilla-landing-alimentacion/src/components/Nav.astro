@@ -1,0 +1,20 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+const { negocio, hero } = content;
+---
+<header class="top" data-top>
+  <p class="top__strip">Despacho en {content.cobertura.comunas.length} comunas · {negocio.horario}</p>
+  <nav class="top__bar container" aria-label="Principal">
+    <a class="top__brand" href="#inicio">
+      <span class="top__logo" aria-hidden="true"></span>{negocio.nombre}
+    </a>
+    <div class="top__links">
+      <a href="#servicios">Servicios</a>
+      <a href="#menu">Menú</a>
+      <a href="#cotizar">Cotizar</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <WhatsAppButton etiqueta="Cotiza" texto={hero.mensajeWhatsapp} origen="nav" />
+  </nav>
+</header>

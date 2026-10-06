@@ -1,0 +1,15 @@
+---
+import content from "../data/content.json";
+const { cobertura } = content;
+---
+<section class="section zone" id="cobertura">
+  <div class="container zone__inner">
+    <div>
+      <h2 class="section__title" data-reveal>{cobertura.titulo}</h2>
+      <p class="zone__text" data-reveal style="--d:80ms">{cobertura.texto}</p>
+    </div>
+    <ul class="zone__chips">
+      {cobertura.comunas.map((c, i) => <li data-reveal style={`--d:${i * 40}ms`}>{c}</li>)}
+    </ul>
+  </div>
+</section>

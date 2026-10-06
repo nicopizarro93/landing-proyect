@@ -1,0 +1,25 @@
+---
+import content from "../data/content.json";
+import Plato from "./Plato.astro";
+const { servicios } = content;
+---
+<section class="section svc" id="servicios">
+  <div class="container">
+    <h2 class="section__title" data-reveal>{servicios.titulo}</h2>
+    <div class="svc__list">
+      {servicios.items.map((s, i) => (
+        <article class:list={["svc__row", i % 2 ? "svc__row--rev" : ""]}>
+          <div class="svc__text" data-reveal>
+            <p class="svc__num">{String(i + 1).padStart(2, "0")}</p>
+            <h3>{s.titulo}</h3>
+            <p class="svc__desc">{s.descripcion}</p>
+            <ul class="svc__points">{s.puntos.map((p) => <li>{p}</li>)}</ul>
+          </div>
+          <div class:list={["svc__art", `tone--${s.tono}`]}>
+            <Plato class="plato--card" tono={s.tono} />
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

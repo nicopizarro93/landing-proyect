@@ -1,0 +1,17 @@
+---
+import content from "../data/content.json";
+const { testimonios } = content;
+---
+<section class="section voices" id="testimonios">
+  <div class="container">
+    <h2 class="section__title" data-reveal>{testimonios.titulo}</h2>
+    <div class="voices__grid">
+      {testimonios.items.map((t, i) => (
+        <figure class:list={["voice", `voice--${i + 1}`]} data-reveal style={`--d:${i * 90}ms`}>
+          <blockquote>“{t.texto}”</blockquote>
+          <figcaption><strong>{t.nombre}</strong><span>{t.cargo}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

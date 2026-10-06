@@ -1,0 +1,109 @@
+{
+  "negocio": {
+    "nombre": "Cocina del Valle",
+    "rubro": "Servicio de alimentación",
+    "ciudad": "Santiago, Chile",
+    "whatsapp": "56912345678",
+    "correo": "contacto@dominio-del-cliente.cl",
+    "instagram": "https://instagram.com/usuario",
+    "direccion": "",
+    "horario": "Lun a Vie 07:00–18:00"
+  },
+  "seo": {
+    "title": "Servicio de alimentación y colaciones para empresas | Cocina del Valle",
+    "description": "Colaciones diarias y catering para empresas y eventos en Santiago. Cocina propia, entrega puntual y menú de la semana. Cotiza por WhatsApp."
+  },
+  "hero": {
+    "etiqueta": "Colaciones y catering · Santiago",
+    "titulo": "Comida casera, justo cuando tu equipo la necesita.",
+    "subtitulo": "Servicio de alimentación para empresas y eventos: cocina propia, entrega puntual y un menú que cambia cada semana.",
+    "cta": "Cotiza por WhatsApp",
+    "ctaSecundario": "Ver el menú",
+    "mensajeWhatsapp": "Hola, quiero cotizar el servicio de alimentación",
+    "foto": "",
+    "fotoAlt": "Plato de comida casera recién preparado",
+    "puntos": ["Entrega puntual", "Cocina propia", "Sin conservantes"],
+    "chips": ["Entrega 12:30", "Menú semanal"]
+  },
+  "confianza": {
+    "titulo": "Empresas que ya almuerzan con nosotros",
+    "empresas": ["Logística Andes", "Clínica Norte", "Constructora Sur", "Estudio Lumen", "Taller Orbita"]
+  },
+  "servicios": {
+    "titulo": "Lo que cocinamos para ti",
+    "items": [
+      { "titulo": "Colaciones diarias", "descripcion": "Almuerzos listos para tu equipo, en envases individuales y a la hora acordada.", "puntos": ["Desde 10 personas", "Menú rotativo semanal", "Opciones vegetarianas"], "tono": "terracota" },
+      { "titulo": "Catering para eventos", "descripcion": "Cócteles, desayunos y almuerzos para reuniones, capacitaciones y celebraciones.", "puntos": ["Montaje y retiro", "Menús a medida", "Hasta 300 personas"], "tono": "oliva" },
+      { "titulo": "Servicio en terreno", "descripcion": "Alimentación para faenas y turnos, con cocina móvil y personal en el lugar.", "puntos": ["Turnos extendidos", "Control sanitario", "Planes mensuales"], "tono": "mostaza" }
+    ]
+  },
+  "menu": {
+    "titulo": "El menú de esta semana",
+    "subtitulo": "Cambia cada lunes. Siempre hay una opción vegetariana.",
+    "dias": [
+      { "dia": "Lunes", "plato": "Pollo al horno con puré rústico", "acompanamiento": "Ensalada de lechuga y tomate", "postre": "Fruta de estación", "tono": "terracota" },
+      { "dia": "Martes", "plato": "Lasaña de verduras gratinada", "acompanamiento": "Ensalada chilena", "postre": "Gelatina de frutilla", "tono": "oliva" },
+      { "dia": "Miércoles", "plato": "Pastel de choclo con ensalada", "acompanamiento": "Arroz graneado", "postre": "Flan casero", "tono": "mostaza" },
+      { "dia": "Jueves", "plato": "Cazuela de vacuno con choclo", "acompanamiento": "Pan amasado", "postre": "Fruta de estación", "tono": "terracota" },
+      { "dia": "Viernes", "plato": "Pescada frita con arroz primavera", "acompanamiento": "Ensalada de betarraga", "postre": "Brownie de la casa", "tono": "oliva" }
+    ]
+  },
+  "cotizador": {
+    "titulo": "Calcula tu servicio",
+    "texto": "Elige cuántas personas, cuántos días y qué tipo de colación. Te damos un valor referencial al instante.",
+    "minPersonas": 10,
+    "maxPersonas": 500,
+    "personasInicial": 40,
+    "diasInicial": 5,
+    "planes": [
+      { "id": "basica", "nombre": "Colación clásica", "detalle": "Plato de fondo + ensalada", "precio": 4200 },
+      { "id": "completa", "nombre": "Colación completa", "detalle": "Fondo + ensalada + postre", "precio": 4800 },
+      { "id": "premium", "nombre": "Colación premium", "detalle": "Entrada + fondo + postre + bebida", "precio": 5900 }
+    ],
+    "nota": "Valor referencial mensual (4,3 semanas). Confirmamos tu cotización por WhatsApp.",
+    "mensajeBase": "Hola, quiero cotizar el servicio de alimentación"
+  },
+  "proceso": {
+    "titulo": "Así funciona",
+    "pasos": [
+      { "titulo": "Nos cuentas lo que necesitas", "descripcion": "Cantidad de personas, días, horario y si hay restricciones alimentarias." },
+      { "titulo": "Recibes tu cotización", "descripcion": "En menos de 24 horas, con el menú y el valor por persona." },
+      { "titulo": "Coordinamos la prueba", "descripcion": "Si quieres, te llevamos una degustación para tu equipo, sin costo." },
+      { "titulo": "Empezamos a servir", "descripcion": "Entregamos a la hora acordada, todos los días, y medimos la satisfacción." }
+    ]
+  },
+  "cifras": [
+    { "valor": 1200, "sufijo": "+", "etiqueta": "colaciones al día" },
+    { "valor": 15, "sufijo": "", "etiqueta": "años de cocina" },
+    { "valor": 40, "sufijo": "+", "etiqueta": "empresas atendidas" },
+    { "valor": 98, "sufijo": "%", "etiqueta": "entregas a tiempo" }
+  ],
+  "testimonios": {
+    "titulo": "Lo que dicen nuestros clientes",
+    "items": [
+      { "nombre": "Carolina M.", "cargo": "Recursos Humanos, Logística Andes", "texto": "Desde que cambiamos de proveedor, el almuerzo dejó de ser un reclamo y pasó a ser lo mejor del día." },
+      { "nombre": "Andrés P.", "cargo": "Administrador, Constructora Sur", "texto": "Puntuales todos los días y con opciones para quienes no comen carne. Cero problemas." },
+      { "nombre": "Valentina R.", "cargo": "Gerente, Estudio Lumen", "texto": "Hicimos un evento de 80 personas y la comida salió impecable. Ya los contratamos de nuevo." }
+    ]
+  },
+  "cobertura": {
+    "titulo": "Despachamos en toda la zona",
+    "texto": "Entregamos en estas comunas. Si la tuya no aparece, escríbenos: casi siempre llegamos.",
+    "comunas": ["Santiago Centro", "Providencia", "Las Condes", "Ñuñoa", "Maipú", "La Florida", "Quilicura", "San Bernardo", "Vitacura", "Pudahuel"]
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      { "pregunta": "¿Cuál es el pedido mínimo?", "respuesta": "Para colaciones diarias, desde 10 personas. Para eventos, consúltanos según el tipo de servicio." },
+      { "pregunta": "¿Tienen opciones vegetarianas o con restricciones?", "respuesta": "Sí. Todos los días hay una opción vegetariana, y podemos adaptar menús sin gluten o sin lactosa avisando con anticipación." },
+      { "pregunta": "¿Cómo se paga?", "respuesta": "Facturamos mensualmente a empresas. Para eventos, pedimos un anticipo al confirmar." },
+      { "pregunta": "¿Puedo cambiar la cantidad de personas?", "respuesta": "Sí. Puedes ajustar la cantidad con 24 horas de anticipación sin costo adicional." }
+    ]
+  },
+  "contacto": {
+    "titulo": "Probemos tu primer almuerzo",
+    "texto": "Escríbenos y te enviamos una cotización y una degustación para tu equipo.",
+    "cta": "Hablemos por WhatsApp"
+  },
+  "colores": { "crema": "#F8F1E4", "cacao": "#2A1A12", "terracota": "#B2432A", "oliva": "#4F6B2F", "mostaza": "#E8A93A", "arena": "#EAD9BD", "suave": "#6A5548" }
+}

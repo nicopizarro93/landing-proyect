@@ -1,0 +1,12 @@
+---
+import content from "../data/content.json";
+const { confianza } = content;
+---
+<section class="trust" aria-label={confianza.titulo}>
+  <div class="container trust__inner">
+    <p class="trust__title">{confianza.titulo}</p>
+    <ul class="trust__list">
+      {confianza.empresas.map((e) => <li>{e}</li>)}
+    </ul>
+  </div>
+</section>
