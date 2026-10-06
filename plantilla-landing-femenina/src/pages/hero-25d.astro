@@ -1,0 +1,20 @@
+---
+// Página de prueba: variante de hero 2.5D con capas y scroll. No reemplaza a index.astro.
+import Base from "../layouts/Base.astro";
+import ScrollProgress from "../components/ScrollProgress.astro";
+import Hero25D from "../components/Hero25D.astro";
+import Planes from "../components/Planes.astro";
+import Contacto from "../components/Contacto.astro";
+import Footer from "../components/Footer.astro";
+import FloatingWhatsApp from "../components/FloatingWhatsApp.astro";
+---
+<Base title="Demo hero 2.5D | Camila Rojas">
+  <ScrollProgress />
+  <Hero25D />
+  <main>
+    <Planes />
+    <Contacto />
+  </main>
+  <Footer />
+  <FloatingWhatsApp />
+</Base>

@@ -25,6 +25,13 @@
     "fotoAlt": "Camila Rojas, personal trainer, entrenando",
     "chips": ["+250 alumnas", "Presencial y online"]
   },
+  "hero25d": {
+    "capas": { "fondo": "", "medio": "", "sujeto": "", "frente": "" },
+    "sujetoAlt": "Camila Rojas, personal trainer",
+    "intro": { "etiqueta": "Entrenamiento para mujeres", "titulo": "Entrena con calma. Avanza con fuerza." },
+    "panel": { "titulo": "Un plan hecho para ti", "texto": "Sin presión ni culpa. Conversamos, diseñamos tu programa y avanzamos paso a paso, a tu ritmo." },
+    "cierre": { "titulo": "Tu primera sesión empieza con un mensaje", "cta": "Escríbeme por WhatsApp" }
+  },
   "marquee": ["Fuerza", "Movilidad", "Bienestar", "Constancia", "Energía", "Confianza"],
   "kinetico": {
     "lineas": ["Fuerza no es perfección", "Es constancia con cariño"],

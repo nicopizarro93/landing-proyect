@@ -1,0 +1,138 @@
+---
+import content from "../data/content.json";
+import WhatsAppButton from "./WhatsAppButton.astro";
+
+const { hero25d: h, hero } = content;
+const { capas } = h;
+---
+<section class="cine" data-cine aria-label="Presentación">
+  <div class="cine__stage">
+    <!-- Capa 1: fondo (más lenta) -->
+    <div class="layer layer--bg" style="--d:0.2;--z:0.05" aria-hidden="true">
+      {capas.fondo
+        ? <img src={capas.fondo} alt="" width="1600" height="1000" fetchpriority="high" />
+        : <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="g-bg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ede9fe" /><stop offset="0.6" stop-color="#fbcfe8" /><stop offset="1" stop-color="#fdf2f8" />
+              </linearGradient>
+            </defs>
+            <rect width="1200" height="900" fill="url(#g-bg)" />
+            <circle cx="820" cy="300" r="150" fill="#fff" opacity="0.65" />
+          </svg>}
+    </div>
+
+    <!-- Capa 2: plano medio -->
+    <div class="layer layer--mid" style="--d:0.5;--z:0.12" aria-hidden="true">
+      {capas.medio
+        ? <img src={capas.medio} alt="" width="1600" height="1000" />
+        : <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMax slice">
+            <path d="M0 640 C 200 540, 380 600, 560 560 S 960 480, 1200 580 V900 H0Z" fill="#c4b5fd" opacity="0.75" />
+            <path d="M0 720 C 240 640, 420 700, 640 660 S 1020 620, 1200 690 V900 H0Z" fill="#f9a8d4" opacity="0.85" />
+          </svg>}
+    </div>
+
+    <!-- Capa 3: sujeto (PNG con fondo transparente) -->
+    <div class="layer layer--subject" style="--d:0.8;--z:0.18">
+      {capas.sujeto
+        ? <img src={capas.sujeto} alt={h.sujetoAlt} width="900" height="1350" />
+        : <svg viewBox="0 0 600 900" preserveAspectRatio="xMidYMax meet" role="img" aria-label={h.sujetoAlt}>
+            <circle cx="300" cy="190" r="92" fill="#4a1d3f" />
+            <path d="M120 900 C 110 620, 170 440, 300 420 C 430 440, 490 620, 480 900Z" fill="#4a1d3f" />
+            <path d="M210 470 C 260 520, 340 520, 390 470" stroke="#fdf2f8" stroke-width="10" fill="none" opacity="0.5" stroke-linecap="round" />
+          </svg>}
+    </div>
+
+    <!-- Capa 4: primer plano (más rápida) -->
+    <div class="layer layer--fore" style="--d:1.4;--z:0.35" aria-hidden="true">
+      {capas.frente
+        ? <img src={capas.frente} alt="" width="1600" height="1000" />
+        : <svg viewBox="0 0 1200 900" preserveAspectRatio="xMidYMax slice">
+            <ellipse cx="60" cy="860" rx="260" ry="150" fill="#be185d" opacity="0.55" transform="rotate(-18 60 860)" />
+            <ellipse cx="1160" cy="880" rx="300" ry="170" fill="#6d28d9" opacity="0.45" transform="rotate(14 1160 880)" />
+            <ellipse cx="330" cy="930" rx="220" ry="110" fill="#ec4899" opacity="0.5" />
+          </svg>}
+    </div>
+
+    <!-- Textos: tres escenas que entran y salen con el scroll -->
+    <div class="copy">
+      <div class="panel panel--intro" data-panel>
+        <p class="eyebrow">{h.intro.etiqueta}</p>
+        <h1>{h.intro.titulo}</h1>
+      </div>
+      <div class="panel panel--a" data-panel>
+        <h2>{h.panel.titulo}</h2>
+        <p>{h.panel.texto}</p>
+      </div>
+      <div class="panel panel--cta" data-panel>
+        <h2>{h.cierre.titulo}</h2>
+        <WhatsAppButton etiqueta={h.cierre.cta} texto={hero.mensajeWhatsapp} origen="hero-25d" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "../scripts/cine.js";
+</script>
+
+<style>
+  /* Base estática (sin JS o con "reducir movimiento"): composición fija y textos apilados */
+  .cine { position: relative; background: var(--color-fondo); --p: 0; --mx: 0; --my: 0; }
+  .cine__stage { position: relative; min-height: 100svh; overflow: clip; display: grid; align-items: end; }
+  .layer { position: absolute; inset: -8%; pointer-events: none; transform-origin: 50% 100%; }
+  .layer svg, .layer img { width: 100%; height: 100%; display: block; }
+  .layer img { object-fit: cover; object-position: center bottom; }
+
+  /* El sujeto es una caja anclada abajo, no un fondo a sangre */
+  .layer--subject { inset: auto 0 0 auto; width: min(78%, 46svh * 0.67 * 2); height: 70%; right: 4%; display: block; }
+  .layer--subject img { object-fit: contain; }
+
+  .copy { position: relative; z-index: 2; width: min(1120px, 100% - 2rem); margin-inline: auto; padding-block: 7rem 4rem; display: grid; gap: 4rem; }
+  .panel { max-width: 30rem; display: grid; gap: 1rem; justify-items: start; }
+  .panel h1, .panel h2 { font-size: clamp(2.2rem, 7vw, 4.2rem); line-height: 1.06; letter-spacing: -0.02em; text-wrap: balance; }
+  .panel h2 { font-size: clamp(1.8rem, 5vw, 3rem); }
+  .panel p:not(.eyebrow) { color: var(--color-suave); font-size: 1.15rem; }
+
+  /* Modo en vivo: escenario fijo y escenas dependientes del scroll */
+  .cine--live { height: 340svh; }
+  .cine--live .cine__stage { position: sticky; top: 0; height: 100svh; min-height: 0; }
+  .cine--live .layer--bg,
+  .cine--live .layer--mid,
+  .cine--live .layer--fore {
+    transform: translate3d(calc(var(--mx) * var(--d) * -14px), calc(var(--p) * var(--d) * -12svh + var(--my) * var(--d) * -8px), 0)
+               scale(calc(1.02 + var(--p) * var(--z)));
+  }
+  .cine--live .layer--subject {
+    transform: translate3d(calc(var(--mx) * var(--d) * -10px), calc(var(--p) * var(--d) * -4svh), 0)
+               scale(calc(1 + var(--p) * var(--z)));
+  }
+  .cine--live .copy { position: absolute; inset: 0; margin: 0; width: auto; padding: 0; display: block; }
+  .cine--live .panel {
+    position: absolute;
+    left: max(1rem, calc((100% - 1120px) / 2));
+    top: 22%;
+    will-change: opacity, transform;
+  }
+  .cine--live .panel--intro {
+    opacity: clamp(0, calc(1 - (var(--p) - 0.06) * 6), 1);
+    transform: translateY(calc(var(--p) * -8svh));
+  }
+  .cine--live .panel--a {
+    opacity: min(clamp(0, calc((var(--p) - 0.3) * 8), 1), clamp(0, calc((0.78 - var(--p)) * 8), 1));
+    transform: translateY(calc((0.5 - var(--p)) * 10svh));
+  }
+  .cine--live .panel--cta {
+    opacity: clamp(0, calc((var(--p) - 0.78) * 9), 1);
+    transform: translateY(calc((0.9 - var(--p)) * 10svh));
+  }
+
+  @media (max-width: 719px) {
+    .cine--live { height: 280svh; }
+    .layer--subject { right: 50%; translate: 50% 0; height: 52%; width: 90%; }
+    .cine--live .panel { top: 14%; right: 1rem; }
+  }
+  @media (min-width: 720px) {
+    .layer--subject { height: 82%; width: min(46%, 520px); right: 6%; }
+  }
+</style>

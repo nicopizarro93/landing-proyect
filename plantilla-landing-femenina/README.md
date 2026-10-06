@@ -42,3 +42,11 @@ Textos en `kinetico` del JSON. Accesible: el `h1` usa `aria-label` con el títul
 Barra de progreso, título palabra por palabra con subrayado que se dibuja, arco con parallax suave, chips flotantes, marquee, contadores, reveal escalonado, paso activo en "Proceso", carrusel con scroll-snap y botón flotante de WhatsApp. Con `prefers-reduced-motion` todo queda estático; sin JavaScript el contenido sigue visible.
 
 Nota: la tipografía viene de Google Fonts. Para autoalojarla (mejor privacidad y rendimiento) usar `@fontsource` y quitar los `<link>` de `Base.astro`.
+
+## Demo hero 2.5D (`/hero-25d`)
+Página de prueba con un escenario fijo de 4 capas (fondo, plano medio, sujeto, primer plano) que se mueven a distinta velocidad con el scroll, más parallax con el mouse y 3 escenas de texto. Inspirado en el enfoque del *cinematic-scroll-prompt-kit*, pero con solo 4 capas y sin librerías.
+
+- Código: `src/components/Hero25D.astro` y `src/scripts/cine.js`. Textos y rutas de imagen en `hero25d` del JSON.
+- Sin imágenes en `hero25d.capas` se muestran formas de placeholder. Para usar fotos: PNG/WebP con fondo transparente para `sujeto` (≈900x1350) y capas panorámicas para `fondo`, `medio` y `frente` (≈1600x1000, con margen extra en los bordes).
+- QA: agregar `?p=0.5` a la URL congela el progreso (0 a 1) para revisar una posición exacta.
+- Con `prefers-reduced-motion` o sin JavaScript se muestra una composición estática con los tres textos apilados.
