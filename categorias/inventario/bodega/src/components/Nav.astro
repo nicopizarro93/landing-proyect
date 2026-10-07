@@ -1,0 +1,18 @@
+---
+import content from "../data/content.json";
+import CtaButton from "./CtaButton.astro";
+const { negocio } = content;
+---
+<header class="nav" data-nav>
+  <nav class="nav__bar container" aria-label="Principal">
+    <a class="nav__brand" href="#inicio">{negocio.nombre}</a>
+    <div class="nav__links">
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#rubros">Rubros</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <CtaButton origen="nav" />
+  </nav>
+</header>
+<span class="nav__sentinel" data-sentinel aria-hidden="true"></span>

@@ -1,0 +1,7 @@
+{
+  "nombre": "Bodega",
+  "texto": "Operativa y sobria. Zinc frío con un solo acento naranja, modo claro y oscuro, y un contador que sube con el scroll.",
+  "colores": ["#16181b", "#b4501f", "#f4f5f6"],
+  "etiquetas": ["Zinc y naranja", "Claro y oscuro", "Conteo con scroll"],
+  "orden": 1
+}

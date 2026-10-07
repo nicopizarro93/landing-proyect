@@ -1,0 +1,28 @@
+---
+// Iconos Phosphor (libreria permitida por la skill). Un solo trazo, un solo estilo (regular) en todo el sitio.
+import arrowUpRight from "@phosphor-icons/core/assets/regular/arrow-up-right.svg?raw";
+import arrowLeft from "@phosphor-icons/core/assets/regular/arrow-left.svg?raw";
+import arrowRight from "@phosphor-icons/core/assets/regular/arrow-right.svg?raw";
+import plus from "@phosphor-icons/core/assets/regular/plus.svg?raw";
+import check from "@phosphor-icons/core/assets/regular/check.svg?raw";
+import barcode from "@phosphor-icons/core/assets/regular/barcode.svg?raw";
+import packageIcon from "@phosphor-icons/core/assets/regular/package.svg?raw";
+import clipboardText from "@phosphor-icons/core/assets/regular/clipboard-text.svg?raw";
+import chartLineUp from "@phosphor-icons/core/assets/regular/chart-line-up.svg?raw";
+import storefront from "@phosphor-icons/core/assets/regular/storefront.svg?raw";
+import truck from "@phosphor-icons/core/assets/regular/truck.svg?raw";
+import pill from "@phosphor-icons/core/assets/regular/pill.svg?raw";
+import hardHat from "@phosphor-icons/core/assets/regular/hard-hat.svg?raw";
+import forkKnife from "@phosphor-icons/core/assets/regular/fork-knife.svg?raw";
+import tag from "@phosphor-icons/core/assets/regular/tag.svg?raw";
+import whatsapp from "@phosphor-icons/core/assets/regular/whatsapp-logo.svg?raw";
+
+const iconos = {
+  "arrow-up-right": arrowUpRight, "arrow-left": arrowLeft, "arrow-right": arrowRight, plus, check, barcode,
+  package: packageIcon, "clipboard-text": clipboardText, "chart-line-up": chartLineUp, storefront, truck, pill,
+  "hard-hat": hardHat, "fork-knife": forkKnife, tag, whatsapp,
+};
+const { nombre, class: clase = "" } = Astro.props;
+const svg = iconos[nombre] ?? "";
+---
+<span class:list={["ico", clase]} aria-hidden="true" set:html={svg} />

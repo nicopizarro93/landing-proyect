@@ -1,0 +1,26 @@
+---
+import content from "../data/content.json";
+import Icon from "./Icon.astro";
+const { servicios } = content;
+---
+<section class="section servicios" id="servicios">
+  <div class="container">
+    <h2 class="section__title" data-reveal>{servicios.titulo}</h2>
+    <div class="bento">
+      {servicios.items.map((s, i) => (
+        <article class:list={["tile", `tile--${s.forma}`, s.tono ? `tile--${s.tono}` : ""]} data-reveal style={`--d:${i * 70}ms`}>
+          {s.foto && (
+            <div class="tile__photo">
+              <img src={s.foto} data-placeholder={s.foto.includes('picsum.photos') ? '' : undefined} alt={s.fotoAlt} width="1000" height="700" loading="lazy" decoding="async" />
+            </div>
+          )}
+          <div class="tile__body">
+            <Icon nombre={s.icono} class="tile__icon" />
+            <h3>{s.titulo}</h3>
+            <p>{s.texto}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

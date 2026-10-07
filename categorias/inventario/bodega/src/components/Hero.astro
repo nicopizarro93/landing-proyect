@@ -1,0 +1,29 @@
+---
+import content from "../data/content.json";
+import CtaButton from "./CtaButton.astro";
+const { hero } = content;
+---
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow" data-rise style="--d:0ms">{hero.etiqueta}</p>
+      <h1 id="hero-title" class="hero__title" data-rise style="--d:70ms">{hero.titulo}</h1>
+      <p class="hero__sub" data-rise style="--d:150ms">{hero.subtitulo}</p>
+      <div class="hero__actions" data-rise style="--d:230ms">
+        <CtaButton origen="hero" />
+        <a class="btn btn--line" href="#proceso"><span class="btn__label">{hero.ctaSecundario}</span></a>
+      </div>
+    </div>
+    <figure class="hero__media">
+      <img
+        src={hero.foto}
+        data-placeholder={hero.foto.includes('picsum.photos') ? '' : undefined}
+        alt={hero.fotoAlt}
+        width={hero.fotoAncho}
+        height={hero.fotoAlto}
+        fetchpriority="high"
+        decoding="async"
+      />
+    </figure>
+  </div>
+</section>

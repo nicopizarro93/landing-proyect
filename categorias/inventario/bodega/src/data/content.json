@@ -1,0 +1,245 @@
+{
+  "negocio": {
+    "nombre": "Cuenta Cabal",
+    "rubro": "Toma de inventarios y control de stock",
+    "ciudad": "Santiago, Chile",
+    "whatsapp": "56912345678",
+    "correo": "contacto@dominio-del-cliente.cl",
+    "instagram": "https://instagram.com/usuario",
+    "direccion": "",
+    "horario": "Lunes a viernes, 08:00 a 18:00"
+  },
+  "seo": {
+    "title": "Toma de inventarios y control de stock | Cuenta Cabal",
+    "description": "Contamos y conciliamos el stock de tu bodega, tienda o centro de distribución. Informe con diferencias y valorización en 48 horas. Cotiza por WhatsApp."
+  },
+  "cta": {
+    "etiqueta": "Cotizar inventario",
+    "mensajeWhatsapp": "Hola, quiero cotizar una toma de inventario"
+  },
+  "hero": {
+    "etiqueta": "Toma de inventarios en Chile",
+    "titulo": "Sabe exactamente qué hay en tu bodega.",
+    "subtitulo": "Contamos y conciliamos tu stock en terreno. Recibes cifras confiables, listas para cerrar el mes.",
+    "ctaSecundario": "Ver cómo trabajamos",
+    "foto": "https://picsum.photos/id/36/1200/1500",
+    "fotoAlt": "Piezas y repuestos ordenados en una cuadrícula perfecta",
+    "fotoAncho": 1200,
+    "fotoAlto": 1500
+  },
+  "clientes": {
+    "titulo": "Confían en nosotros",
+    "empresas": [
+      "Distribuidora Maule",
+      "Ferretería Costanera",
+      "Bodegas Lo Boza",
+      "Minimarket Alameda",
+      "Cadena Vitalia"
+    ]
+  },
+  "servicios": {
+    "titulo": "Qué hacemos",
+    "items": [
+      {
+        "id": "fisico",
+        "forma": "grande",
+        "icono": "package",
+        "titulo": "Inventario físico general",
+        "texto": "Conteo completo de bodegas, tiendas y centros de distribución, con cierre en una sola jornada.",
+        "foto": "https://picsum.photos/id/26/1000/700",
+        "fotoAlt": "Objetos clasificados y ordenados sobre una mesa"
+      },
+      {
+        "id": "ciclico",
+        "forma": "ancha",
+        "tono": "patron",
+        "icono": "clipboard-text",
+        "titulo": "Inventario cíclico",
+        "texto": "Conteos parciales y periódicos para detectar diferencias a tiempo, sin detener tu operación."
+      },
+      {
+        "id": "conciliacion",
+        "forma": "normal",
+        "tono": "acento",
+        "icono": "chart-line-up",
+        "titulo": "Conciliación",
+        "texto": "Cruzamos el conteo con tu sistema y explicamos cada diferencia."
+      },
+      {
+        "id": "etiquetado",
+        "forma": "normal",
+        "tono": "base",
+        "icono": "barcode",
+        "titulo": "Etiquetado",
+        "texto": "Códigos de barras y QR para que cada producto tenga identidad."
+      }
+    ]
+  },
+  "proceso": {
+    "titulo": "Cómo trabajamos",
+    "contador": {
+      "valor": 48320,
+      "etiqueta": "unidades contadas en un inventario de bodega mediana"
+    },
+    "pasos": [
+      {
+        "titulo": "Planificamos",
+        "texto": "Definimos zonas, horarios y equipo. Si hace falta, visitamos la bodega antes del conteo."
+      },
+      {
+        "titulo": "Contamos",
+        "texto": "Un equipo capacitado cuenta con lectores de código de barras y doble verificación por zona."
+      },
+      {
+        "titulo": "Conciliamos",
+        "texto": "Comparamos el conteo con tu sistema y revisamos cada diferencia directamente en terreno."
+      },
+      {
+        "titulo": "Entregamos",
+        "texto": "Recibes el informe con diferencias, valorización y recomendaciones en un máximo de 48 horas."
+      }
+    ]
+  },
+  "resultados": {
+    "titulo": "Lo que puedes esperar",
+    "muestra": true,
+    "principal": {
+      "valor": "99,3",
+      "unidad": "%",
+      "texto": "de exactitud en los conteos auditados por nuestro equipo de control"
+    },
+    "secundarios": [
+      {
+        "valor": "1.840",
+        "unidad": "",
+        "texto": "inventarios realizados desde 2012"
+      },
+      {
+        "valor": "48",
+        "unidad": "h",
+        "texto": "para entregar el informe final"
+      }
+    ]
+  },
+  "rubros": {
+    "titulo": "Rubros que atendemos",
+    "items": [
+      {
+        "icono": "storefront",
+        "titulo": "Retail y tiendas",
+        "texto": "Conteos nocturnos para abrir al día siguiente sin sorpresas.",
+        "foto": "https://picsum.photos/id/21/800/1000",
+        "fotoAlt": "Calzado exhibido en una tienda"
+      },
+      {
+        "icono": "pill",
+        "titulo": "Farmacias",
+        "texto": "Control por lote y fecha de vencimiento.",
+        "foto": "https://picsum.photos/id/41/800/1000",
+        "fotoAlt": "Gotas sobre una superficie, referencia a productos de farmacia"
+      },
+      {
+        "icono": "truck",
+        "titulo": "Distribución y logística",
+        "texto": "Centros de distribución con alta rotación y mucha variedad de productos.",
+        "foto": "https://picsum.photos/id/45/800/1000",
+        "fotoAlt": "Vehículo de reparto estacionado"
+      },
+      {
+        "icono": "hard-hat",
+        "titulo": "Construcción y minería",
+        "texto": "Materiales, repuestos y herramientas en bodegas de faena.",
+        "foto": "https://picsum.photos/id/29/800/1000",
+        "fotoAlt": "Roca y terreno de una faena minera"
+      },
+      {
+        "icono": "fork-knife",
+        "titulo": "Alimentos y restaurantes",
+        "texto": "Insumos perecibles y cámaras de frío, con registro de mermas.",
+        "foto": "https://picsum.photos/id/23/800/1000",
+        "fotoAlt": "Cubiertos ordenados en una cocina"
+      },
+      {
+        "icono": "tag",
+        "titulo": "Ferreterías y repuestos",
+        "texto": "Miles de códigos pequeños, contados y etiquetados uno a uno.",
+        "foto": "https://picsum.photos/id/7/800/1000",
+        "fotoAlt": "Artículos y herramientas sobre una mesa de trabajo"
+      }
+    ]
+  },
+  "testimonios": {
+    "titulo": "Lo que dicen nuestros clientes",
+    "principal": {
+      "texto": "Cada diferencia de inventario hoy tiene un motivo y un responsable.",
+      "nombre": "Rodrigo Escalona",
+      "cargo": "Jefe de Bodega",
+      "empresa": "Distribuidora Maule"
+    },
+    "secundarios": [
+      {
+        "texto": "Contaron toda la tienda en una noche y abrimos a la hora de siempre.",
+        "nombre": "Paulina Quiroga",
+        "cargo": "Gerente de Operaciones",
+        "empresa": "Ferretería Costanera"
+      },
+      {
+        "texto": "El informe llegó con valorización lista para el balance. Ahorró días a mi equipo.",
+        "nombre": "Ignacio Barría",
+        "cargo": "Contador",
+        "empresa": "Bodegas Lo Boza"
+      }
+    ]
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      {
+        "pregunta": "¿Tengo que detener mi operación durante el conteo?",
+        "respuesta": "Depende. En inventarios generales coordinamos una jornada de cierre. Con inventario cíclico puedes seguir operando normalmente."
+      },
+      {
+        "pregunta": "¿Cuánto demora un inventario?",
+        "respuesta": "Una bodega mediana se cuenta en una jornada. Definimos la duración exacta después de conocer tus zonas y la cantidad de productos."
+      },
+      {
+        "pregunta": "¿Qué necesito entregarles?",
+        "respuesta": "Un listado actualizado de productos desde tu sistema y acceso a las zonas de conteo. Nosotros llevamos equipos y lectores."
+      },
+      {
+        "pregunta": "¿Trabajan con mi sistema o ERP?",
+        "respuesta": "Sí. Recibimos tu información en Excel o CSV y entregamos la conciliación en el formato que tu sistema necesite."
+      },
+      {
+        "pregunta": "¿Cómo se cotiza?",
+        "respuesta": "Según la cantidad de ubicaciones, la variedad de productos y el plazo. Con esos datos te enviamos una propuesta en menos de un día hábil."
+      }
+    ]
+  },
+  "contacto": {
+    "titulo": "Cuéntanos qué bodega quieres contar.",
+    "texto": "Respondemos en menos de un día hábil con una propuesta y las fechas disponibles."
+  },
+  "colores": {
+    "claro": {
+      "fondo": "#F4F5F6",
+      "superficie": "#FBFBFC",
+      "texto": "#16181B",
+      "suave": "#555C66",
+      "acento": "#B4501F",
+      "sobreAcento": "#FBFBFC",
+      "tinte": "#F6DDD0",
+      "linea": "rgba(22, 24, 27, 0.14)"
+    },
+    "oscuro": {
+      "fondo": "#0F1114",
+      "superficie": "#171A1F",
+      "texto": "#ECEEF1",
+      "suave": "#9BA3AE",
+      "acento": "#E48B62",
+      "sobreAcento": "#0F1114",
+      "tinte": "#2A1B14",
+      "linea": "rgba(236, 238, 241, 0.16)"
+    }
+  }
+}

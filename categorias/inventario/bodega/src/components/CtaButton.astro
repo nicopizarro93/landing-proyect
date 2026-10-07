@@ -1,0 +1,13 @@
+---
+// Una sola etiqueta para la intencion "contactar": se usa igual en nav, hero y cierre.
+import content from "../data/content.json";
+import Icon from "./Icon.astro";
+
+const { origen = "general", variante = "primario" } = Astro.props;
+const mensaje = encodeURIComponent(`${content.cta.mensajeWhatsapp} (desde: ${origen})`);
+const href = `https://wa.me/${content.negocio.whatsapp}?text=${mensaje}`;
+---
+<a class:list={["btn", `btn--${variante}`]} href={href} target="_blank" rel="noopener noreferrer">
+  <span class="btn__label">{content.cta.etiqueta}</span>
+  <Icon nombre="arrow-up-right" class="btn__icon" />
+</a>

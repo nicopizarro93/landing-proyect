@@ -1,0 +1,30 @@
+---
+// Marcas inventadas: se generan como monogramas SVG simples (la skill prohibe texto plano para marcas ficticias).
+// Solo logos, sin etiquetas de rubro. Con clientes reales, reemplazar por sus logos en SVG.
+import content from "../data/content.json";
+const { clientes } = content;
+const formas = ["cuadrado", "circulo", "rombo", "triangulo"];
+---
+<section class="logos" aria-labelledby="logos-title">
+  <div class="container logos__inner">
+    <h2 id="logos-title" class="logos__title">{clientes.titulo}</h2>
+    <ul class="logos__list">
+      {clientes.empresas.map((nombre, i) => {
+        const letra = nombre.trim().charAt(0).toUpperCase();
+        const forma = formas[i % formas.length];
+        return (
+          <li class="logo">
+            <svg class="logo__mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+              {forma === "cuadrado" && <rect x="2" y="2" width="28" height="28" rx="7" fill="currentColor" />}
+              {forma === "circulo" && <circle cx="16" cy="16" r="14" fill="currentColor" />}
+              {forma === "rombo" && <rect x="5" y="5" width="22" height="22" rx="4" transform="rotate(45 16 16)" fill="currentColor" />}
+              {forma === "triangulo" && <path d="M16 2.5 30 28H2z" fill="currentColor" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />}
+              <text x="16" y={forma === "triangulo" ? 24 : 21.5} text-anchor="middle" font-size="15" font-weight="700" fill="var(--bg)" font-family="Geist Variable, sans-serif">{letra}</text>
+            </svg>
+            <span class="logo__name">{nombre}</span>
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>

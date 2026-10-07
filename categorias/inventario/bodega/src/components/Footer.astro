@@ -1,0 +1,13 @@
+---
+import content from "../data/content.json";
+const { negocio } = content;
+const anio = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__brand">{negocio.nombre}</p>
+    <p>{negocio.rubro}</p>
+    <p>© {anio} {negocio.nombre}</p>
+    {negocio.instagram && <a href={negocio.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>}
+  </div>
+</footer>

@@ -1,0 +1,66 @@
+---
+import "@fontsource-variable/geist";
+import "@fontsource-variable/geist-mono";
+import "../styles/global.css";
+import content from "../data/content.json";
+
+const {
+  title = content.seo.title,
+  description = content.seo.description,
+} = Astro.props;
+
+// Con BASE_PATH (galeria de versiones) las rutas cuelgan de una subcarpeta; sin ella, base queda vacio.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const n = content.negocio;
+const { claro, oscuro } = content.colores;
+
+// Un solo tema por pagina: sigue la preferencia del sistema (claro u oscuro), sin secciones invertidas.
+const vars = (c) =>
+  `--bg:${c.fondo};--surface:${c.superficie};--text:${c.texto};--soft:${c.suave};--accent:${c.acento};--on-accent:${c.sobreAcento};--tint:${c.tinte};--line:${c.linea}`;
+const temas = `:root{${vars(claro)}}@media (prefers-color-scheme: dark){:root{${vars(oscuro)}}}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: n.nombre,
+  description,
+  url: canonical.href,
+  telephone: `+${n.whatsapp}`,
+  email: n.correo,
+  areaServed: "Chile",
+  ...(n.direccion ? { address: n.direccion } : {}),
+  ...(n.instagram ? { sameAs: [n.instagram] } : {}),
+};
+---
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(`${base}/og-image.jpg`, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content={claro.fondo} media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content={oscuro.fondo} media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href={`${base}/favicon.svg`} />
+    <style is:inline set:html={temas}></style>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <slot />
+    <script>
+      import "../scripts/motion.js";
+    </script>
+  </body>
+</html>

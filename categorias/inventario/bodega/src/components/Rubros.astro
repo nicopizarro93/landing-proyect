@@ -1,0 +1,26 @@
+---
+import content from "../data/content.json";
+import Icon from "./Icon.astro";
+const { rubros } = content;
+---
+<section class="section rubros" id="rubros" aria-labelledby="rubros-title">
+  <div class="container rubros__head">
+    <h2 id="rubros-title" class="section__title" data-reveal>{rubros.titulo}</h2>
+    <div class="rubros__nav" role="group" aria-label="Desplazar rubros">
+      <button type="button" class="round" data-rubros-prev aria-label="Rubros anteriores"><Icon nombre="arrow-left" /></button>
+      <button type="button" class="round" data-rubros-next aria-label="Rubros siguientes"><Icon nombre="arrow-right" /></button>
+    </div>
+  </div>
+  <ul class="rubros__track" data-rubros tabindex="0" aria-label="Rubros que atendemos">
+    {rubros.items.map((r) => (
+      <li class="rubro">
+        <img src={r.foto} data-placeholder={r.foto.includes('picsum.photos') ? '' : undefined} alt={r.fotoAlt} width="800" height="1000" loading="lazy" decoding="async" />
+        <div class="rubro__body">
+          <Icon nombre={r.icono} class="rubro__icon" />
+          <h3>{r.titulo}</h3>
+          <p>{r.texto}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

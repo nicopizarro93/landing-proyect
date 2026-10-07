@@ -1,0 +1,30 @@
+---
+import content from "../data/content.json";
+const { testimonios } = content;
+const { principal, secundarios } = testimonios;
+---
+<section class="section voices" id="testimonios">
+  <div class="container">
+    <h2 class="section__title" data-reveal>{testimonios.titulo}</h2>
+    <div class="voices__grid">
+      <figure class="voice voice--main" data-reveal>
+        <blockquote>“{principal.texto}”</blockquote>
+        <figcaption>
+          <strong>{principal.nombre}</strong>
+          <span>{principal.cargo}, {principal.empresa}</span>
+        </figcaption>
+      </figure>
+      <div class="voices__side">
+        {secundarios.map((t, i) => (
+          <figure class="voice" data-reveal style={`--d:${(i + 1) * 90}ms`}>
+            <blockquote>“{t.texto}”</blockquote>
+            <figcaption>
+              <strong>{t.nombre}</strong>
+              <span>{t.cargo}, {t.empresa}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
