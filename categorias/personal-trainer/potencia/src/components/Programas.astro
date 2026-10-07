@@ -1,0 +1,26 @@
+---
+import content from "../data/content.json";
+import Icon from "./Icon.astro";
+const { programas } = content;
+---
+<section class="section rubros" id="programas" aria-labelledby="programas-title">
+  <div class="container rubros__head">
+    <h2 id="programas-title" class="section__title" data-reveal>{programas.titulo}</h2>
+    <div class="rubros__nav" role="group" aria-label="Desplazar programas">
+      <button type="button" class="round" data-rubros-prev aria-label="Programas anteriores"><Icon nombre="arrow-left" /></button>
+      <button type="button" class="round" data-rubros-next aria-label="Programas siguientes"><Icon nombre="arrow-right" /></button>
+    </div>
+  </div>
+  <ul class="rubros__track" data-rubros tabindex="0" aria-label="Programas según tu meta">
+    {programas.items.map((r) => (
+      <li class="rubro">
+        <img src={r.foto} data-placeholder={r.foto.includes('picsum.photos') ? '' : undefined} alt={r.fotoAlt} width="800" height="1000" loading="lazy" decoding="async" />
+        <div class="rubro__body">
+          <Icon nombre={r.icono} class="rubro__icon" />
+          <h3>{r.titulo}</h3>
+          <p>{r.texto}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>

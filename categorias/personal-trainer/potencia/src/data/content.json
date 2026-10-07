@@ -1,0 +1,112 @@
+{
+  "negocio": {
+    "nombre": "Fuerza Austral",
+    "rubro": "Entrenamiento personal",
+    "ciudad": "Santiago, Chile",
+    "whatsapp": "56912345678",
+    "correo": "contacto@dominio-del-cliente.cl",
+    "instagram": "https://instagram.com/usuario",
+    "direccion": "",
+    "horario": "Lunes a viernes, 06:30 a 21:00"
+  },
+  "seo": {
+    "title": "Entrenamiento personal en Santiago | Fuerza Austral",
+    "description": "Entrenamiento personal en Santiago con plan a tu medida, sesiones guiadas y seguimiento semanal. Reserva tu evaluación por WhatsApp."
+  },
+  "cta": {
+    "etiqueta": "Reservar evaluación",
+    "mensajeWhatsapp": "Hola, quiero reservar una evaluación de entrenamiento"
+  },
+  "hero": {
+    "etiqueta": "Entrenamiento personal en Santiago",
+    "titulo": "Entrena fuerte. Sin adivinar.",
+    "subtitulo": "Plan a tu medida, sesiones guiadas y seguimiento semanal para que cada entrenamiento cuente.",
+    "ctaSecundario": "Ver programas",
+    "foto": "https://picsum.photos/id/1077/1800/1100",
+    "fotoAlt": "Ciclista en movimiento, en blanco y negro",
+    "capas": { "sujeto": "", "sujetoAlt": "" },
+    "escenaB": {
+      "titulo": "Evaluación, plan y seguimiento en un solo lugar.",
+      "texto": "Medimos tu punto de partida, diseñamos tu semana y ajustamos cada 7 días."
+    }
+  },
+  "servicios": {
+    "titulo": "Cómo entrenamos",
+    "items": [
+      { "id": "uno", "forma": "grande", "icono": "barbell", "titulo": "Entrenamiento 1 a 1", "texto": "Sesiones presenciales con técnica cuidada, cargas a tu nivel y progresión medida.", "foto": "https://picsum.photos/id/1011/1000/700", "fotoAlt": "Persona remando con esfuerzo sobre el agua" },
+      { "id": "online", "forma": "ancha", "tono": "patron", "icono": "lightning", "titulo": "Plan online", "texto": "Rutina personalizada y seguimiento por WhatsApp, desde tu casa o tu gimnasio." },
+      { "id": "grupo", "forma": "normal", "tono": "acento", "icono": "users-three", "titulo": "Grupos reducidos", "texto": "Hasta 4 personas por clase, con corrección individual." },
+      { "id": "habitos", "forma": "normal", "tono": "base", "icono": "bowl-food", "titulo": "Hábitos", "texto": "Pautas simples de alimentación y descanso, sin dietas extremas." }
+    ]
+  },
+  "proceso": {
+    "titulo": "Cómo trabajamos",
+    "contador": { "valor": 12480, "etiqueta": "sesiones guiadas desde que abrimos el estudio" },
+    "pasos": [
+      { "titulo": "Evaluamos", "texto": "Medimos tu punto de partida, revisamos lesiones y definimos una meta concreta para 12 semanas." },
+      { "titulo": "Planificamos", "texto": "Diseñamos tu semana: ejercicios, cargas y descansos, adaptados a tu horario real." },
+      { "titulo": "Entrenamos", "texto": "Sesiones guiadas, presenciales u online, con corrección de técnica en cada serie." },
+      { "titulo": "Ajustamos", "texto": "Cada 7 días revisamos tu progreso y cambiamos el plan para que sigas avanzando." }
+    ]
+  },
+  "resultados": {
+    "titulo": "Lo que puedes esperar",
+    "muestra": true,
+    "principal": { "valor": "92", "unidad": "%", "texto": "de nuestros alumnos cumple la meta que se propuso en las primeras 12 semanas" },
+    "secundarios": [
+      { "valor": "310", "unidad": "", "texto": "alumnos entrenados desde 2016" },
+      { "valor": "3", "unidad": "x", "texto": "sesiones por semana en promedio" }
+    ]
+  },
+  "programas": {
+    "titulo": "Programas según tu meta",
+    "items": [
+      { "icono": "arrows-clockwise", "titulo": "Bajar grasa", "texto": "Fuerza y cardio combinados, con pauta de hábitos para sostener el resultado.", "foto": "https://picsum.photos/id/1001/800/1000", "fotoAlt": "Persona caminando junto al agua" },
+      { "icono": "barbell", "titulo": "Ganar masa muscular", "texto": "Hipertrofia con progresión de cargas y control del descanso.", "foto": "https://picsum.photos/id/1005/800/1000", "fotoAlt": "Persona con capucha mirando el mar" },
+      { "icono": "medal", "titulo": "Fuerza", "texto": "Levantamientos base con técnica cuidada y metas por marca personal.", "foto": "https://picsum.photos/id/1033/800/1000", "fotoAlt": "Estructura oscura con líneas fuertes" },
+      { "icono": "ruler", "titulo": "Movilidad", "texto": "Rango de movimiento y postura para moverte sin dolor.", "foto": "https://picsum.photos/id/1006/800/1000", "fotoAlt": "Persona estirando en una cima" },
+      { "icono": "sneaker", "titulo": "Preparación deportiva", "texto": "Plan para una carrera, una temporada o un deporte específico.", "foto": "https://picsum.photos/id/1004/800/1000", "fotoAlt": "Silueta en un entorno oscuro" },
+      { "icono": "heartbeat", "titulo": "Salud y energía", "texto": "Rutinas suaves y constantes para recuperar el ritmo después de una pausa.", "foto": "https://picsum.photos/id/1031/800/1000", "fotoAlt": "Líneas de una estructura de gran altura" }
+    ]
+  },
+  "planes": {
+    "titulo": "Planes",
+    "destacado": { "nombre": "Presencial", "precio": "$90.000", "periodo": "/mes", "texto": "La forma más directa de avanzar: sesiones 1 a 1 con seguimiento.", "incluye": ["8 sesiones 1 a 1 al mes", "Evaluación inicial y plan por escrito", "Seguimiento semanal por WhatsApp", "Pauta de hábitos"] },
+    "otros": [
+      { "nombre": "Online", "precio": "$40.000", "periodo": "/mes", "texto": "Rutina y control a distancia.", "incluye": ["Rutina personalizada", "Ajustes cada semana"] },
+      { "nombre": "Acompañamiento total", "precio": "$140.000", "periodo": "/mes", "texto": "Para quien quiere ir al máximo.", "incluye": ["12 sesiones 1 a 1 al mes", "Seguimiento diario"] }
+    ]
+  },
+  "testimonios": {
+    "titulo": "Lo que dicen los alumnos",
+    "principal": { "texto": "Por fin entiendo qué hago en cada ejercicio y por qué.", "nombre": "Camila Reyes", "cargo": "Alumna desde 2023", "empresa": "plan Presencial" },
+    "secundarios": [
+      { "texto": "Bajé 7 kilos sin pasar hambre y sin lesionarme.", "nombre": "Matías Orellana", "cargo": "Alumno desde 2024", "empresa": "plan Online" },
+      { "texto": "Las sesiones son cortas, claras y siempre con un objetivo.", "nombre": "Francisca Bravo", "cargo": "Alumna desde 2022", "empresa": "plan Presencial" }
+    ]
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes",
+    "items": [
+      { "pregunta": "¿Necesito experiencia previa?", "respuesta": "No. Parto de tu nivel actual y subimos la exigencia de forma gradual." },
+      { "pregunta": "¿Puedo entrenar en mi casa?", "respuesta": "Sí. El plan online funciona con poco o ningún equipamiento y se adapta a lo que tengas." },
+      { "pregunta": "¿Cuánto demoro en ver resultados?", "respuesta": "Los primeros cambios suelen notarse entre la semana 4 y la 6, siempre que mantengas la constancia." },
+      { "pregunta": "¿Qué pasa si tengo una lesión?", "respuesta": "La revisamos en la evaluación y adapto los ejercicios. Si hace falta, te pido el alta de tu profesional de salud." },
+      { "pregunta": "¿Cómo reservo la evaluación?", "respuesta": "Escríbeme por WhatsApp, elegimos un horario y la hacemos en el estudio o por videollamada." }
+    ]
+  },
+  "contacto": {
+    "titulo": "Tu primera evaluación empieza con un mensaje.",
+    "texto": "Cuéntame tu meta y tu horario. Te respondo el mismo día con una propuesta."
+  },
+  "colores": {
+    "fondo": "#0C0C0D",
+    "superficie": "#151517",
+    "texto": "#F3F3F0",
+    "suave": "#A7A7AD",
+    "acento": "#FFC800",
+    "sobreAcento": "#0C0C0D",
+    "tinte": "#2B2508",
+    "linea": "rgba(243, 243, 240, 0.16)"
+  }
+}

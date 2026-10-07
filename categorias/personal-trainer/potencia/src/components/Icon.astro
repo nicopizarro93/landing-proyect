@@ -1,0 +1,25 @@
+---
+// Iconos Phosphor (libreria permitida por la skill). Un solo trazo, un solo estilo (regular) en todo el sitio.
+import arrowUpRight from "@phosphor-icons/core/assets/regular/arrow-up-right.svg?raw";
+import arrowLeft from "@phosphor-icons/core/assets/regular/arrow-left.svg?raw";
+import arrowRight from "@phosphor-icons/core/assets/regular/arrow-right.svg?raw";
+import plus from "@phosphor-icons/core/assets/regular/plus.svg?raw";
+import check from "@phosphor-icons/core/assets/regular/check.svg?raw";
+import barbell from "@phosphor-icons/core/assets/regular/barbell.svg?raw";
+import lightning from "@phosphor-icons/core/assets/regular/lightning.svg?raw";
+import usersThree from "@phosphor-icons/core/assets/regular/users-three.svg?raw";
+import bowlFood from "@phosphor-icons/core/assets/regular/bowl-food.svg?raw";
+import arrowsClockwise from "@phosphor-icons/core/assets/regular/arrows-clockwise.svg?raw";
+import medal from "@phosphor-icons/core/assets/regular/medal.svg?raw";
+import ruler from "@phosphor-icons/core/assets/regular/ruler.svg?raw";
+import sneaker from "@phosphor-icons/core/assets/regular/sneaker.svg?raw";
+import heartbeat from "@phosphor-icons/core/assets/regular/heartbeat.svg?raw";
+import personSimpleRun from "@phosphor-icons/core/assets/regular/person-simple-run.svg?raw";
+import target from "@phosphor-icons/core/assets/regular/target.svg?raw";
+import calendarCheck from "@phosphor-icons/core/assets/regular/calendar-check.svg?raw";
+
+const iconos = { "arrow-up-right": arrowUpRight, "arrow-left": arrowLeft, "arrow-right": arrowRight, "plus": plus, "check": check, "barbell": barbell, "lightning": lightning, "users-three": usersThree, "bowl-food": bowlFood, "arrows-clockwise": arrowsClockwise, "medal": medal, "ruler": ruler, "sneaker": sneaker, "heartbeat": heartbeat, "person-simple-run": personSimpleRun, "target": target, "calendar-check": calendarCheck };
+const { nombre, class: clase = "" } = Astro.props;
+const svg = iconos[nombre] ?? "";
+---
+<span class:list={["ico", clase]} aria-hidden="true" set:html={svg} />

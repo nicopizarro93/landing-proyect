@@ -1,0 +1,25 @@
+---
+import content from "../data/content.json";
+const { resultados } = content;
+const { principal, secundarios } = resultados;
+---
+<!-- Cifras de ejemplo (muestra: true en content.json). Reemplazar por datos reales del negocio. -->
+<section class="section results" id="resultados" data-mock={resultados.muestra ? "true" : undefined}>
+  <div class="container">
+    <h2 class="section__title" data-reveal>{resultados.titulo}</h2>
+    <div class="results__grid">
+      <div class="result result--main" data-reveal>
+        <p class="result__value"><span>{principal.valor}</span><small>{principal.unidad}</small></p>
+        <p class="result__text">{principal.texto}</p>
+      </div>
+      <div class="results__side">
+        {secundarios.map((r, i) => (
+          <div class="result" data-reveal style={`--d:${(i + 1) * 90}ms`}>
+            <p class="result__value"><span>{r.valor}</span><small>{r.unidad}</small></p>
+            <p class="result__text">{r.texto}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

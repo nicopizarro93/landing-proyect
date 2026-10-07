@@ -1,0 +1,62 @@
+---
+import "@fontsource-variable/outfit";
+import "@fontsource-variable/geist-mono";
+import "../styles/global.css";
+import content from "../data/content.json";
+
+const {
+  title = content.seo.title,
+  description = content.seo.description,
+} = Astro.props;
+
+// Con BASE_PATH (galeria de versiones) las rutas cuelgan de una subcarpeta; sin ella, base queda vacio.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const noindex = import.meta.env.PUBLIC_NOINDEX === "true";
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const n = content.negocio;
+const c = content.colores;
+
+// Decision de marca: la identidad es oscura con amarillo, asi que el tema es oscuro siempre (no depende del sistema).
+const tokens = `--bg:${c.fondo};--surface:${c.superficie};--text:${c.texto};--soft:${c.suave};--accent:${c.acento};--on-accent:${c.sobreAcento};--tint:${c.tinte};--line:${c.linea}`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  name: n.nombre,
+  description,
+  url: canonical.href,
+  telephone: `+${n.whatsapp}`,
+  email: n.correo,
+  openingHours: n.horario,
+  ...(n.direccion ? { address: n.direccion } : {}),
+  ...(n.instagram ? { sameAs: [n.instagram] } : {}),
+};
+---
+<!doctype html>
+<html lang="es-CL" style={tokens}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(`${base}/og-image.jpg`, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content={c.fondo} />
+    <link rel="icon" href={`${base}/favicon.svg`} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <slot />
+    <script>
+      import "../scripts/motion.js";
+    </script>
+  </body>
+</html>

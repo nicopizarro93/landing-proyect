@@ -1,0 +1,7 @@
+{
+  "nombre": "Potencia",
+  "texto": "Oscura y de alto impacto. Negro con amarillo tipo gimnasio, un hero por capas que se mueve con el scroll y bloques sólidos.",
+  "colores": ["#0c0c0d", "#ffc800", "#f3f3f0"],
+  "etiquetas": ["Negro y amarillo", "Hero por capas", "Contador con scroll"],
+  "orden": 5
+}

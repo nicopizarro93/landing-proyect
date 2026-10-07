@@ -1,0 +1,19 @@
+---
+import content from "../data/content.json";
+import CtaButton from "./CtaButton.astro";
+const { contacto, negocio } = content;
+---
+<section class="section close" id="contacto">
+  <div class="container">
+    <div class="close__panel" data-reveal>
+      <h2 class="close__title">{contacto.titulo}</h2>
+      <p class="close__text">{contacto.texto}</p>
+      <CtaButton origen="contacto" variante="oscuro" />
+      <ul class="close__info">
+        <li>{negocio.horario}</li>
+        <li><a href={`mailto:${negocio.correo}`}>{negocio.correo}</a></li>
+        {negocio.direccion && <li>{negocio.direccion}</li>}
+      </ul>
+    </div>
+  </div>
+</section>

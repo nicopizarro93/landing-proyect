@@ -8,9 +8,12 @@ categorias/
 │  ├─ oscura/                   ← plantilla.json + proyecto Astro
 │  ├─ femenina/
 │  ├─ femenina-v2/
-│  └─ moderna/
-└─ alimentacion/                ← categoria.json
-   └─ calida/
+│  ├─ moderna/
+│  └─ potencia/
+├─ alimentacion/                ← categoria.json
+│  └─ calida/
+└─ inventario/                  ← categoria.json
+   └─ bodega/
 ```
 
 | Categoría | Plantilla | Descripción |
@@ -19,7 +22,9 @@ categorias/
 | | [`femenina`](categorias/personal-trainer/femenina) | Rosa y lavanda, kinetic type, demo de hero 2.5D |
 | | [`femenina-v2`](categorias/personal-trainer/femenina-v2) | La anterior, pulida (hover solo con mouse, nav translúcido, casos extremos) |
 | | [`moderna`](categorias/personal-trainer/moderna) | Editorial: lima y cobalto; bento, tarjetas apiladas, proceso horizontal |
+| | [`potencia`](categorias/personal-trainer/potencia) | Negro y amarillo tipo gimnasio; hero por capas con scroll, bento y contador |
 | Servicios de alimentación | [`calida`](categorias/alimentacion/calida) | Terracota y oliva; menú que cambia con el scroll y cotizador |
+| Inventario y control de stock | [`bodega`](categorias/inventario/bodega) | Zinc y naranja, claro y oscuro; contador con scroll; hecha con taste-skill |
 
 Cada plantilla es un proyecto independiente con su propio `README.md`:
 

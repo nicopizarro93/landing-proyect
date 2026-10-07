@@ -1,0 +1,27 @@
+---
+import content from "../data/content.json";
+const { proceso } = content;
+const total = new Intl.NumberFormat("es-CL").format(proceso.contador.valor);
+---
+<section class="section proc" id="proceso" aria-labelledby="proc-title">
+  <div class="container">
+    <h2 id="proc-title" class="section__title" data-reveal>{proceso.titulo}</h2>
+    <div class="proc__grid">
+      <!-- El numero sube mientras recorres los pasos: representa el conteo avanzando.
+           Con scroll-driven animations (animation-timeline); si el navegador no las soporta, queda el total final. -->
+      <div class="proc__tally">
+        <p class="proc__num" aria-hidden="true" style={`--total:${proceso.contador.valor}`}></p>
+        <p class="sr-only">{total} {proceso.contador.etiqueta}</p>
+        <p class="proc__label" aria-hidden="true">{proceso.contador.etiqueta}</p>
+      </div>
+      <ol class="proc__steps">
+        {proceso.pasos.map((p) => (
+          <li class="step" data-reveal>
+            <h3>{p.titulo}</h3>
+            <p>{p.texto}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

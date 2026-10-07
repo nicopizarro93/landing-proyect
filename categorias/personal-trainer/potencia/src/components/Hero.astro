@@ -1,0 +1,43 @@
+---
+// Hero por capas con scroll (inspirado en la demo 2.5D), hecho solo con CSS scroll-driven animations:
+// sin JavaScript y sin listeners de scroll. Con "reducir movimiento" o sin soporte queda una portada estatica.
+import content from "../data/content.json";
+import CtaButton from "./CtaButton.astro";
+const { hero } = content;
+const placeholder = hero.foto.includes("picsum.photos");
+---
+<section class="cine" id="inicio" aria-labelledby="hero-title">
+  <div class="cine__stage">
+    <!-- Capa 1: foto de fondo (la mas lenta) -->
+    <div class="layer layer--photo" aria-hidden="true">
+      <img src={hero.foto} data-placeholder={placeholder ? "" : undefined} alt="" width="1800" height="1100" fetchpriority="high" decoding="async" />
+    </div>
+    <!-- Velo para que el texto sea siempre legible sobre la foto -->
+    <div class="layer layer--veil" aria-hidden="true"></div>
+    <!-- Capa 2: bloque amarillo diagonal (se mueve mas rapido, da la sensacion de profundidad) -->
+    <div class="layer layer--slab" aria-hidden="true"></div>
+    <!-- Capa 3 opcional: deportista recortado en PNG con fondo transparente -->
+    {hero.capas.sujeto && (
+      <div class="layer layer--subject">
+        <img src={hero.capas.sujeto} alt={hero.capas.sujetoAlt} width="900" height="1350" decoding="async" />
+      </div>
+    )}
+
+    <div class="container cine__content">
+      <div class="scene scene--a">
+        <p class="eyebrow" data-rise style="--d:0ms">{hero.etiqueta}</p>
+        <h1 id="hero-title" class="hero__title" data-rise style="--d:70ms">{hero.titulo}</h1>
+        <p class="hero__sub" data-rise style="--d:150ms">{hero.subtitulo}</p>
+        <div class="hero__actions" data-rise style="--d:230ms">
+          <CtaButton origen="hero" />
+          <a class="btn btn--line" href="#programas"><span class="btn__label">{hero.ctaSecundario}</span></a>
+        </div>
+      </div>
+      <div class="scene scene--b">
+        <h2 class="scene__title">{hero.escenaB.titulo}</h2>
+        <p class="scene__text">{hero.escenaB.texto}</p>
+        <CtaButton origen="hero-escena" />
+      </div>
+    </div>
+  </div>
+</section>

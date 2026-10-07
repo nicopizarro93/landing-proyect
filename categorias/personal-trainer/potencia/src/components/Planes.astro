@@ -1,0 +1,40 @@
+---
+// Un plan destacado grande y dos compactos: no son tres tarjetas iguales.
+import content from "../data/content.json";
+import CtaButton from "./CtaButton.astro";
+import Icon from "./Icon.astro";
+const { planes } = content;
+const d = planes.destacado;
+---
+<section class="section plans" id="planes">
+  <div class="container">
+    <h2 class="section__title" data-reveal>{planes.titulo}</h2>
+    <div class="plans__grid">
+      <article class="plan plan--main" data-reveal>
+        <div class="plan__head">
+          <h3>{d.nombre}</h3>
+          <p class="plan__price"><span>{d.precio}</span><small>{d.periodo}</small></p>
+        </div>
+        <p class="plan__text">{d.texto}</p>
+        <ul class="plan__list">
+          {d.incluye.map((x) => <li><Icon nombre="check" class="plan__check" />{x}</li>)}
+        </ul>
+        <CtaButton origen="plan-presencial" />
+      </article>
+      <div class="plans__side">
+        {planes.otros.map((p, i) => (
+          <article class="plan plan--side" data-reveal style={`--d:${(i + 1) * 90}ms`}>
+            <div class="plan__head">
+              <h3>{p.nombre}</h3>
+              <p class="plan__price"><span>{p.precio}</span><small>{p.periodo}</small></p>
+            </div>
+            <p class="plan__text">{p.texto}</p>
+            <ul class="plan__list">
+              {p.incluye.map((x) => <li><Icon nombre="check" class="plan__check" />{x}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
